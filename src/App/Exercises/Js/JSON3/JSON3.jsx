@@ -38,7 +38,7 @@ export function ExerciseJSON3() {
   }
 
   return (
-    <div className="container-local-storage">
+    <div className="container-local-storage2">
       <input
         type="text"
         value={localStorageData}

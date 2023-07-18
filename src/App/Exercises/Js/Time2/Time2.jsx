@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './styles.css';
 
 export const Exercise5 = () => {
@@ -6,28 +6,32 @@ export const Exercise5 = () => {
   const [initialTime, setInitialTime] = useState(Date.now());
   const [elapsedTime, setElapsedTime] = useState(0);
   const [results, setResults] = useState([]);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
-    let intervalId;
+    let animationFrameId;
+
+    const updateTimer = () => {
+      if (isRunning) {
+        setElapsedTime(Date.now() - initialTime);
+      }
+
+      animationFrameId = requestAnimationFrame(updateTimer);
+    };
 
     if (isRunning) {
-      const intervalStart = Date.now() - elapsedTime;
-      intervalId = setInterval(() => {
-        setElapsedTime(Date.now() - intervalStart);
-      }, 10);
+      animationFrameId = requestAnimationFrame(updateTimer);
     }
 
-    return () => clearInterval(intervalId);
-  }, [isRunning, elapsedTime]);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isRunning, initialTime]);
 
   const toggleTimer = () => {
     if (isRunning) {
-      // Jeśli timer jest uruchomiony, zatrzymaj go i zapamiętaj aktualny czas
-      setInitialTime(Date.now());
+      setInitialTime(Date.now() - elapsedTime);
       setIsRunning(false);
     } else {
-      // Jeśli timer jest zatrzymany, wznow go i skoryguj wartość elapsedTime
-      setInitialTime(Date.now() - elapsedTime);
+      setInitialTime(Date.now());
       setIsRunning(true);
     }
   };
@@ -41,12 +45,12 @@ export const Exercise5 = () => {
     const minutes = Math.floor(timestamp / 1000 / 60);
     const seconds = Math.floor(timestamp / 1000) % 60;
     const ms = timestamp % 100;
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${ms}`;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${ms.toString().padStart(2, '0')}`;
   };
 
   return (
     <div className="timer-container">
-      <div>{formatTime(elapsedTime)}</div>
+      <div className="timer">{formatTime(elapsedTime)}</div>
       <button className="timer-button" onClick={toggleTimer}>
         {isRunning ? 'Zatrzymaj' : 'Wznów'}
       </button>
@@ -74,6 +78,7 @@ export const Exercise5 = () => {
 };
 
 export default Exercise5;
+
 
 
 

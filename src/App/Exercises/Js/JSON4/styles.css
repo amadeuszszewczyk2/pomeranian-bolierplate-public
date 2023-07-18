@@ -12,7 +12,6 @@ padding: 13px 16px 13px 16px;
 border-radius: 5px;
 border: 1px;
 gap: 10px;
-
 }
 
 .input-container span {
@@ -34,7 +33,6 @@ border: 5px;
 .input-container {
   flex-direction: column;
   border-radius: 5px;
-
 }
 
 .input-container button {
@@ -44,19 +42,17 @@ border: 5px;
   height: 56px;
   border: 1px solid #FE3756;
   background-color: #FE3756;
-  
 }
 
 .records-list {
   margin-top: 30px;
-  margin-left: 100px;
+  margin-left: 200px;
   padding: 10px;
-  }
+}
 
 .records-list ul {
   list-style-type: none;
   padding: 0;
-  
 }
 
 .records-list li {
@@ -67,7 +63,6 @@ font-weight: 700;
 line-height: 27px;
 letter-spacing: 0em;
 text-align: left;
-
 }
 
 .records-list button {
@@ -81,7 +76,3 @@ text-align: left;
   text-align: right;
   background-color: #FE3756;
 }
-
-
-
-

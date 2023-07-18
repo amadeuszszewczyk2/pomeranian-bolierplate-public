@@ -79,40 +79,30 @@ const foster_pets = [
 export function Tables() {
   return (
 
-<table>
-<thead>
-
-{Object.keys(foster_pets[0]).map((key) => (
-<th className="th1" key={key}>{key}</th>
-
-))}
-
-</thead>
-
-<tbody>
-
-{foster_pets.map((dog) => (
-<tr className='tr1' key={dog.id}>
-<td className='td1'> {dog.name}</td>
-<td className='td1'> {dog.age}</td>
-<td className='td1'> {dog.sex}</td>
-<td className='td1'> {dog.breed}</td>
-<td className='td1'> {dog.size}</td>
-<td className='td1'>
-<input type="checkbox" checked={dog.chip} />
-</td>
-<td className='td1'>
-<input type="checkbox" checked={dog.sterilized} />
-</td>
-
-</tr>
-
-))}
-</tbody>
-
-</table>
-
-
+    <table>
+      <thead>
+        {Object.keys(foster_pets[0]).map((key) => (
+          <th className="th1" key={key}>{key}</th>
+        ))}
+      </thead>
+      <tbody>
+        {foster_pets.map((dog) => (
+          <tr className="tr1" key={dog.id}>
+            <td className="td1">{dog.name}</td>
+            <td className="td1">{dog.age}</td>
+            <td className="td1">{dog.sex}</td>
+            <td className="td1">{dog.breed}</td>
+            <td className="td1">{dog.size}</td>
+            <td className="td1">
+              <input type="checkbox" checked={dog.chip} />
+            </td>
+            <td className="td1">
+              <input type="checkbox" checked={dog.sterilized} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
 
 )
 }

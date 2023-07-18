@@ -1,7 +1,3 @@
-.font-test-family {
-  font-family: Chilanka;
-}
-
 .tr1 {
   text-align: center;
 }
@@ -10,8 +6,9 @@
   text-align: center;
 }
 
-.th1, .td1 {
-  border: 2px solid black; /* Grubość i styl obramowania */
+.th1,
+.td1 {
+  border: 2px solid black;
   padding: 8px;
   text-align: center;
 }
@@ -21,6 +18,10 @@
 }
 
 .td1:hover {
-  background-color: yellow; /* Domyślny kolor podświetlenia */
-  border: 10px;
+  background-color: yellow;
 }
+
+.tr1:last-child {
+  border-bottom: 2px solid black;
+}
+

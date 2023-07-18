@@ -18,6 +18,7 @@ import { JSONMetaData } from './JSON/router-data';
 import { JSON2MetaData } from './JSON2/router-data';
 import { JSON3MetaData } from './JSON3/router-data';
 import { JSON4MetaData } from './JSON4/router-data';
+import { NoughtsAndCrossesMetaData } from './NoughtsAndCrosses/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -34,6 +35,7 @@ export const blockRouterMetaData = [
   Banner6MetaData,
   HitTheMoleGameMetaData,
   MemoGameMetaData,
+  NoughtsAndCrossesMetaData,
   JSONMetaData,
   JSON2MetaData,
   JSON3MetaData,
