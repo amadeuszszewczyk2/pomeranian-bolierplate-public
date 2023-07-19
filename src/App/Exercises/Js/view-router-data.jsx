@@ -22,6 +22,9 @@ import { ObjectsMetaData } from './Objects/router-data';
 import { Array1MetaData } from './Array1/router-data';
 import { MapMetaData } from './Map/router-data';
 import { IF2MetaData } from './IF2/router-data';
+import { TryMetaData } from './Try/router-data';
+import { Try2MetaData } from './Try2/router-data';
+import { Try3MetaData } from './Try3/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -45,7 +48,10 @@ export const blockRouterMetaData = [
   JSONMetaData,
   JSON2MetaData,
   JSON3MetaData,
-  JSON4MetaData
+  JSON4MetaData,
+  TryMetaData,
+  Try2MetaData,
+  Try3MetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
