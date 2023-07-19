@@ -15,7 +15,7 @@ const handleSettingsClick = () => {
 export function AppHeader() {
   return (
     <header>
-      <Link to="/">
+      <Link to="/dashboard">
         <Logo />
       </Link>
       <div className="menu">

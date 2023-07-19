@@ -1,8 +1,6 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
-
 import { NotFound } from './App/Components/NotFound/NotFound';
-
 import { Layout } from './App/Layout';
 import { Dashboard } from './App/Dashboard';
 import { CV } from './App/CV/CV';
@@ -12,14 +10,15 @@ import { Calendar } from './App/Calendar/Calendar';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ/FAQ';
 import { Settings } from './App/Settings/Setttings';
-
+import { Login } from './Login';
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<Layout withSidebar />}>
-          <Route index element={<Navigate to="dashboard" />} />
+          <Route index element={<Navigate to="/login" />} />  
+          <Route path="/login" element={<Login />} /> 
+          <Route path="" element={<Layout withSidebar />}>
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="CV/*" element={<CV />} />
           <Route path="blocks/*" element={<Blocks />} />
