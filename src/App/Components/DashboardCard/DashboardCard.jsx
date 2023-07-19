@@ -9,7 +9,7 @@ const DashboardCard = ({ sectionTitle, description, icon, link }) => {
       <div className="icon-wrapper">{icon}</div>
       <p className="card-description">{description}</p>
       <a className="card-link" href={link}>
-        zobacz więcej &gt;
+        see more &gt;
       </a>
     </div>
   );

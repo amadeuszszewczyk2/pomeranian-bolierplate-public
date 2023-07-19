@@ -1,35 +1,34 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { NotFound } from '../Components/NotFound/NotFound';
 import './styles.css';
+
+const faqData = [
+  {
+    question: "Pytanie 1",
+    answer: "Odpowiedź na pytanie 1."
+  },
+  {
+    question: "Pytanie 2",
+    answer: "Odpowiedź na pytanie 2."
+  },
+  {
+    question: "Pytanie 3",
+    answer: "Odpowiedź na pytanie 3."
+  }
+];
 
 export function FAQ() {
   return (
-    <Routes>
-      <Route path="" element={<FAQLayout />}></Route>
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
-
-function FAQLayout() {
-  return (
-    <>
-      
-  <div className="faq-main-container">
-      
-  <h1>FAQ</h1>
-  <h5>Tutaj znajdź odpowiedzi na najczęściej zadawane pytania</h5>
-
-<div className='border-box'>
-
-  <div className="blocktext">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend rutrum ipsum, leo et in. Mattis porttitor volutpat placerat suspendisse ante in cursus etiam ullamcorper. Sollicitudin egestas aliquam, adipiscing adipiscing iaculis habitant. Viverra pretium tincidunt nisl pellentesque ut adipiscing non.Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-  
-  </div>
-  </div>
-  </div>
-      
-    </>
+    <div className="faq-main-container">
+      <h1>FAQ</h1>
+      <h5>Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania</h5>
+      <div className='border-box'>
+        {faqData.map((item, index) => (
+          <div key={index} className="blocktext">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -20,21 +20,23 @@ export const Dashboard = () => {
       link: '/exercises',
     },
     {
+      sectionTitle: 'Calendar',
+      icon: <img src={setting} alt="business card resume" />,
+      description: 'calendar',
+      link: '/calendar',
+    },
+    
+    {
       sectionTitle: 'Blog',
       icon: <img src={setting} alt="business card resume" />,
       description: 'blog about front-end technology',
       link: '/blog',
     },
-    {
-      sectionTitle: 'Tech stack',
-      icon: <img src={setting} alt="business card resume" />,
-      description: 'technological stack implemented on the course',
-      link: '/tech',
-    },
+
     {
       sectionTitle: 'FAQ',
       icon: <img src={setting} alt="business card resume" />,
-      description: 'answers to the most frequently asked questions',
+      description: 'questions and answers',
       link: '/faq',
     },
   ]);

@@ -5,7 +5,7 @@ import { IF } from './IF';
 export const IFMetaData = {
   path: 'IF',
   date: '25.06.2023',
-  linkLabel: 'IF',
+  linkLabel: 'IF Statement 2',
   blockNo: 1,
   element: <IF />,
   tags: ['flex', 'grid', 'video'],

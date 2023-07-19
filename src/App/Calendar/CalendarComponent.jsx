@@ -53,10 +53,11 @@ const Calendar1 = () => {
       const currentDate = new Date(year, month, i);
       const isCurrentDay = currentDate.toDateString() === new Date().toDateString();
       const isSelected = selectedDay === i;
+      const isWeekend = currentDate.getDay() === 0 || currentDate.getDay() === 6;
 
       calendar.push(
         <div
-          className={`calendar-day ${isCurrentDay ? 'current-day' : ''} ${isSelected ? 'selected' : ''}`}
+          className={`calendar-day ${isCurrentDay ? 'current-day' : ''} ${isSelected ? 'selected' : ''} ${isWeekend ? 'weekend' : ''}`}
           key={`day-${i}`}
           onClick={() => handleDayClick(i)}
         >
@@ -88,5 +89,7 @@ const Calendar1 = () => {
 };
 
 export default Calendar1;
+
+
 
 
