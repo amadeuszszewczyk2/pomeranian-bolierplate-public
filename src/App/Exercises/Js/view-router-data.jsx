@@ -29,6 +29,9 @@ import { UseStateMetaData } from './UseState/router-data';
 import { UseEffectMetaData } from './UseEffect/router-data';
 import { ForMetaData } from './For/router-data';
 import { WhileMetaData } from './While/router-data';
+import { Try4MetaData } from './Try4/router-data';
+import { PrototypeMetaData } from './Prototype/router-data';
+import { ThisMetaData } from './This/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -60,6 +63,9 @@ export const blockRouterMetaData = [
   TryMetaData,
   Try2MetaData,
   Try3MetaData,
+  Try4MetaData,
+  PrototypeMetaData,
+  ThisMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

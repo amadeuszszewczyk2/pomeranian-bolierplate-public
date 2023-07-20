@@ -53,17 +53,3 @@ export function ExerciseTry() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
