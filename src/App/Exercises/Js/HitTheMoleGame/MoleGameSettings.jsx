@@ -19,8 +19,8 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
 
   const moleCountOption = [
     { label: '1 kret' },
-    { label: '2 krety' },
-    { label: '3 krety' },
+    /* { label: '2 krety' },
+    { label: '3 krety' }, */
   ];
 
   const handleGameTimeSelection = (timeValue, index) => {
@@ -38,8 +38,8 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
     setSelectedMoleCount(1);
     setScore(0);
     setIsGameStarted(false);
-    setRestart(true); // Ustawienie restartu na true
-    onRestart(); // Wywołanie funkcji onRestart z komponentu rodzica
+    setRestart(true);
+    onRestart();
   };
 
   const formatTime = (time) => {

@@ -25,6 +25,10 @@ import { IF2MetaData } from './IF2/router-data';
 import { TryMetaData } from './Try/router-data';
 import { Try2MetaData } from './Try2/router-data';
 import { Try3MetaData } from './Try3/router-data';
+import { UseStateMetaData } from './UseState/router-data';
+import { UseEffectMetaData } from './UseEffect/router-data';
+import { ForMetaData } from './For/router-data';
+import { WhileMetaData } from './While/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -35,10 +39,14 @@ export const blockRouterMetaData = [
   ObjectsMetaData,
   IF2MetaData,
   IFMetaData,
+  ForMetaData,
+  WhileMetaData,
   Array1MetaData,
   JsArraysBasicsMetaData,
   SortFunctionsMetaData,
   MapMetaData,
+  UseStateMetaData,
+  UseEffectMetaData,
   TimeMetaData,
   Time2MetaData,
   Time3MetaData,
