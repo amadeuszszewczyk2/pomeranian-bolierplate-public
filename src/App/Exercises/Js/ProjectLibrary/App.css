@@ -1,0 +1,116 @@
+.library-app {
+  text-align: center;
+  margin: 20px;
+}
+
+.library-app-header {
+  background-color: white;
+  padding: 20px;
+  color: black;
+}
+
+.library-app h1 {
+  margin: 0;
+}
+
+.library-app nav {
+  margin-top: 10px;
+}
+
+.library-app-btn {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.library-app-btn-light-green {
+  background-color: gray;
+}
+
+.library-app-btn-light-red {
+  background-color: gray;
+}
+
+.library-app-btn-red {
+  background-color: gray;
+}
+
+.library-app-main {
+  margin-top: 20px;
+}
+
+.library-app-books-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.library-app-book-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+  max-height: 220px;
+  border-radius: 5px;
+  margin-top: -270px;
+}
+
+.library-app-empty-library-message {
+  font-size: 18px;
+  margin-top: -500px;
+}
+
+.library-app-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.library-app-modal-content {
+  background-color: white;
+  padding: 20px;
+  margin-top: 180px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.library-app-modal-content h2 {
+  margin-top: 0;
+}
+
+.library-app-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.library-app-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.library-app-button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.library-app-modal .btn {
+  margin-left: 10px;
+}
+
+
+
