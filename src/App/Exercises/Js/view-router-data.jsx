@@ -32,6 +32,7 @@ import { WhileMetaData } from './While/router-data';
 import { Try4MetaData } from './Try4/router-data';
 import { PrototypeMetaData } from './Prototype/router-data';
 import { ThisMetaData } from './This/router-data';
+import { Try5MetaData } from './Try5/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -64,6 +65,7 @@ export const blockRouterMetaData = [
   Try2MetaData,
   Try3MetaData,
   Try4MetaData,
+  Try5MetaData,
   PrototypeMetaData,
   ThisMetaData,
 ];
