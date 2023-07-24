@@ -1,23 +1,87 @@
-.no1 {
-  padding: 1rem;
-  background-color: #ffd5db;
-  border-radius: 20px;
-  border: 1px;
-  margin: 0.1rem;
-  display: flex;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  justify-content: center;
-  align-items: center;
+/* styles.css */
+
+/* Use a unique class name to scope the styles to this component */
+.driving-form {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  padding: 10px; /* Decreased padding to make the box smaller */
+  border-radius: 10px;
+
+/* Fade-in animation for the form */
+  animation: fadeIn 2s ease;
 }
 
-.no2 {
-  background-color: white;
-  color: #333333;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+/* Style the labels and inputs */
+.driving-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.driving-form input[type="number"],
+.driving-form input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+/* Style the submit button with a background color animation */
+.driving-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  /* Animation for the button */
+  animation: buttonColorChange 0.3s ease;
+}
+
+.driving-form button:hover {
+  background-color: #45a049;
+}
+
+/* Keyframes for button color change animation */
+@keyframes buttonColorChange {
+  from {
+    background-color: #4CAF50;
+  }
+  to {
+    background-color: #42a642;
+  }
+}
+
+/* Style the result paragraph */
+.driving-form p.ifno1 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Update the appearance of the age input */
+.driving-form input[type="number"] {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+/* Style the checkboxes */
+.driving-form input[type="checkbox"] {
+  transform: scale(1.5); /* Increase checkbox size */
+  margin-right: 5px;
+}
+

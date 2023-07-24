@@ -34,6 +34,7 @@ import { PrototypeMetaData } from './Prototype/router-data';
 import { ThisMetaData } from './This/router-data';
 import { Try5MetaData } from './Try5/router-data';
 import { ProjectLibraryMetaData } from './ProjectLibrary/router-data';
+import { FetchMetaData } from './Fetch/router-data';
 
 
 export const blockRouterMetaData = [
@@ -71,6 +72,7 @@ export const blockRouterMetaData = [
   PrototypeMetaData,
   ThisMetaData,
   ProjectLibraryMetaData,
+  FetchMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
