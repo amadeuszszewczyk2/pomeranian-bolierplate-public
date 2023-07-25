@@ -10,7 +10,8 @@
     {
       "id": 1,
       "body": "some comment",
-      "postId": 1
+      "postId": 1,
+      "test": "test"
     }
   ],
   "profile": {
