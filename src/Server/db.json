@@ -1,0 +1,13 @@
+{
+    
+    "posts": [
+      { "id": 1, "title": "testowy", "author": "Amadeusz Szewczyk" }
+   
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1, "title": "testowy", "author": "Amadeusz Szewczyk" }
+    
+    ],
+    "profile": { "name": "typicode" }
+
+}

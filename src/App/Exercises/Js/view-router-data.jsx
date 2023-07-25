@@ -35,6 +35,8 @@ import { ThisMetaData } from './This/router-data';
 import { Try5MetaData } from './Try5/router-data';
 import { ProjectLibraryMetaData } from './ProjectLibrary/router-data';
 import { FetchMetaData } from './Fetch/router-data';
+import { Try6MetaData } from './Try6/router-data';
+import { Try7MetaData } from './Try7/router-data';
 
 
 export const blockRouterMetaData = [
@@ -69,6 +71,8 @@ export const blockRouterMetaData = [
   Try3MetaData,
   Try4MetaData,
   Try5MetaData,
+  Try6MetaData,
+  Try7MetaData,
   PrototypeMetaData,
   ThisMetaData,
   ProjectLibraryMetaData,
