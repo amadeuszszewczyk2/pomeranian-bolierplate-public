@@ -7,6 +7,10 @@ export const App2 = () => {
     return storedLibrary ? JSON.parse(storedLibrary) : [];
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState({
     title: '',
     author: '',
