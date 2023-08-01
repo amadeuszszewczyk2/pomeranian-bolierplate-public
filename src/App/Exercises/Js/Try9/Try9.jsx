@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import axios from 'axios';
 
@@ -7,6 +7,18 @@ const BASE_API_URL = 'http://localhost:3333/';
 export function ExerciseTry99() {
   const [getTodoList, setTodoList] = useState([]);
   const [getError, setError] = useState('');
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const options = {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    };
+    return date.toLocaleString(undefined, options);
+  };
 
   const handleFetchTodoData = async () => {
     const timeOutDuration = 5000;
@@ -30,27 +42,30 @@ export function ExerciseTry99() {
     }
   };
 
+  useEffect(() => {
+    handleFetchTodoData();
+  }, []);
+
   return (
-    <div className="container--swagger">
-      <button onClick={handleFetchTodoData}>Pobierz TODO's</button>
+    <div className="todo-container">
+      <h2 className="todo-container__title">Todo List</h2>
+
       {getError && <p>{getError}</p>}
 
-      {getTodoList.length > 0 && (
-        <ul>
-          {getTodoList.map((todo) => (
-            <li key={todo.id}>
-              {todo.createdAt}
-              <br />
-              {todo.author}
-              <br />
-              {todo.isDone.toString()}
-              <br />
-              {todo.note}
-            </li>
+      <div className="todo-container__list">
+        {getTodoList.length > 0 &&
+          getTodoList.map((todo) => (
+            <div className="todo-container__list__item" key={todo.id}>
+              <h3 className="todo-container__list__item__title">{todo.title}</h3>
+              <div className="todo-container__list__item__author">{todo.author}</div>
+              <div className="todo-container__list__item__date">{formatDate(todo.createdAt)}</div>
+              <div className="todo-container__list__item__note">
+                <span>{todo.note}</span>
+                <span className="todo-container__list__item__donedate">{formatDate(todo.createdAt)}</span>
+              </div>
+            </div>
           ))}
-        </ul>
-      )}
+      </div>
     </div>
   );
 }
-
