@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
+import { TodoItem } from './ToDoItem/TodoItem';
 
 const BASE_API_URL = 'http://localhost:3333/api';
 
@@ -28,20 +29,8 @@ export function ExerciseTry99() {
       setError('');
       setTodoList(response.data);
     } catch (error) {
-      setError('Wystpił błąd podczas komunikacji z serwerem ' + error?.message);
+      setError('Wystąpił błąd podczas komunikacji z serwerem ' + error?.message);
     }
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = {
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    };
-    return date.toLocaleString(undefined, options);
   };
 
   useEffect(() => {
@@ -56,40 +45,9 @@ export function ExerciseTry99() {
 
       <div className="todo-container__list">
         {getTodoList.length > 0 &&
-          getTodoList.map((todo) => {
-            const itemClasses = `todo-container__list__item ${
-              todo.isDone ? 'todo-container__list__item--darker' : ''
-            }`;
-
-            return (
-              <div className={itemClasses} key={todo.id}>
-                <div className="todo-container__list__item__wrapper">
-                  <h3 className="todo-container__list__item__wrapper__title">
-                    {todo.title}
-                  </h3>
-                  <div className="todo-container__list__item__wrapper__text todo-container__list__item__wrapper__text--smaller">
-                    {todo.author}
-                  </div>
-                  <div className="todo-container__list__item__wrapper__text todo-container__list__item__wrapper__text--smaller">
-                    {formatDate(todo.createdAt)}
-                  </div>
-                  <p className="todo-container__list__item__wrapper__text">
-                    {todo.note}
-                  </p>
-                </div>
-                <div className="todo-container__list__item__side">
-                  {todo.isDone && (
-                    <>
-                      <div className="todo-container__list__item__side__checkmark">
-                        &#10003;
-                      </div>
-                      <div>{formatDate(todo.doneDate)}</div>
-                    </>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+          getTodoList.map((todo) => (
+            <TodoItem todo={todo} key={todo.id} />
+          ))}
       </div>
     </div>
   );
