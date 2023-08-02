@@ -44,3 +44,7 @@
   color: green;
   text-align: center;
 }
+
+.todo-container__list__item__side__bin {
+  background-color: transparent;
+}

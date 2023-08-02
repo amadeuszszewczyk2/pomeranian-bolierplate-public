@@ -39,7 +39,7 @@ export function ExerciseTry99() {
 
   return (
     <div className="todo-container">
-      <h2 className="todo-container__title">Todo List 2</h2>
+      <h2 className="todo-container__title">Todo List</h2>
 
       {getError && <p>{getError}</p>}
 
