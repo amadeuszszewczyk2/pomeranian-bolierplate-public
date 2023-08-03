@@ -1,0 +1,27 @@
+.todo-form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-top: 8px;
+  }
+
+  .todo-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+.todo-form-input#note {
+    height: 100px;
+  }
+
+  .todo-form-button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+
+  
