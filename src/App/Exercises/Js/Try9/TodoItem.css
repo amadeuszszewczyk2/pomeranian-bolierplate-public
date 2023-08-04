@@ -62,3 +62,39 @@
   background-color: gray;
   color: white;
 }
+
+.todo-container__list__item__side__done {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  background-color: transparent;
+  color: black;
+}
+
+.todo-container__list__item__side__done.error {
+  background-color: red;
+  color: white;
+}
+
+.todo-container__list__item__side__done:hover:not(.error) {
+  background-color: gray;
+  color: white;
+}
+
+.todo-container__list__item__side__edit {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  background-color: transparent;
+  color: black;
+}
+
+.todo-container__list__item__side__edit.error {
+  background-color: red;
+  color: white;
+}
+
+.todo-container__list__item__side__edit:hover:not(.error) {
+  background-color: gray;
+  color: white;
+}
