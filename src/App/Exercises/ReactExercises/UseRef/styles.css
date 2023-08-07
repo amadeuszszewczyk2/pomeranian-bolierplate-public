@@ -1,0 +1,31 @@
+.exercise41-container {
+  margin: 20px;
+  width: 350px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.exercise41-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.exercise41-container select,
+.exercise41-container input[type='text'] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.exercise41-container button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.exercise41-container button:hover {
+  background-color: #0056b3;
+}
