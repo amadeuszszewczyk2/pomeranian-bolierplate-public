@@ -1,22 +1,35 @@
-.user-card {
-    display: grid;
-    grid-template-columns: auto repeat(3, 1fr);
-    margin-bottom: 1em;
-    padding: 1em;
-    border-radius: 2px;
-    box-shadow: 2px 2px 3px 0px gray;
-    align-items: center;
-  }
-  .user-card * {
-    padding: 5px;
-  }
-  
-  .user-card a {
-    text-decoration: none;
-    color: var(--dark-blue);
-  }
-  
-  .user-card a:hover {
-    color: var(--primary);
-    transition: all .2s;
-  }
+.todo-form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.todo-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.todo-form-input#note {
+  height: 100px;
+}
+
+.todo-form-button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-container__empty {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-container__empty p {
+  font-weight: bold;
+}

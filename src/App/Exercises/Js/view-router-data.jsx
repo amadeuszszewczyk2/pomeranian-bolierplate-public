@@ -4,7 +4,7 @@ import { blockRouterMetaData as blockRouterMetaDataJsVariables1 } from './Exerci
 import { blockRouterMetaData as blockRouterMetaDataJsVariables2 } from './Exercise-js-variables-2/router-data';
 import { blockRouterMetaData as blockRouterMetaDataJsFunction1 } from './Exercise-js-functions/router-data';
 import { IFMetaData } from './IF/router-data';
-import { JsArraysBasicsMetaData } from './JsArraysBasics/router-data'
+import { JsArraysBasicsMetaData } from './JsArraysBasics/router-data';
 import { SortFunctionsMetaData } from './SortFunctions/router-data';
 import { TimeMetaData } from './Time/router-data';
 import { Time2MetaData } from './Time2/router-data';
@@ -39,6 +39,7 @@ import { Try6MetaData } from './Try6/router-data';
 import { Try7MetaData } from './Try7/router-data';
 import { Try8MetaData } from './Try8/router-data';
 import { Try9MetaData } from './Try9/router-data';
+import { PropsMetaData } from './Props/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -80,6 +81,7 @@ export const blockRouterMetaData = [
   ThisMetaData,
   ProjectLibraryMetaData,
   FetchMetaData,
+  PropsMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
