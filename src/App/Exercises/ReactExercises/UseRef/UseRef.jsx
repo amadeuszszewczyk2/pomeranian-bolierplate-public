@@ -1,10 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
+import Modal from 'react-modal';
 import './styles.css';
 
 export function Exercise41() {
   const quantityRef = useRef(null);
   const colorRef = useRef(null);
   const sizeRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [summaryText, setSummaryText] = useState('');
 
   useEffect(() => {
     quantityRef.current.focus();
@@ -20,7 +23,17 @@ export function Exercise41() {
       - Color: ${colorValue}
       - Size: ${sizeValue}`;
 
-    alert(summaryText);
+    setSummaryText(summaryText);
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
+
+  function handleConfirm() {
+    alert('Confirmed!');
+    closeModal();
   }
 
   return (
@@ -54,6 +67,14 @@ export function Exercise41() {
         </select>
       </div>
       <button onClick={handleButtonClick}>Show Summary</button>
+      <Modal isOpen={isModalOpen} onRequestClose={closeModal} className="modal">
+        <h2>Summary</h2>
+        <p>{summaryText}</p>
+        <div className="modal-buttons">
+          <button onClick={closeModal}>Cancel</button>
+          <button onClick={handleConfirm}>Confirm</button>
+        </div>
+      </Modal>
     </div>
   );
 }
