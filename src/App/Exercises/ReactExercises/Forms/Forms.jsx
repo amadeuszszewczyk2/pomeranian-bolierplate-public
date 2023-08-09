@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './styles.css';
-import MainSection from './MainSection/MainSection';
-import FieldSection from './FieldSection/FieldSection';
-import RadioButtons from './RadioButtons/RadioButtons';
 import CheckMarks from './CheckMarks/CheckMarks';
+import FieldSection from './FieldSection/FieldSection';
+import MainSection from './MainSection/MainSection';
+import RadioButtons from './RadioButtons/RadioButtons';
+import OrderDetailsSection from './OrderDetailsSection/OrderDetailsSection';
+import './styles.css';
 
 const productOptions = [
   { value: 'frontend', label: 'kurs front-end' },
@@ -23,12 +24,30 @@ const additionalOptions = [
   { value: 'materiały', label: 'materiały dodatkowe' },
 ];
 
+const isValidEmail = (email) => {
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return emailPattern.test(email);
+};
+
 export function Exercise42() {
   const [selectedProduct, setSelectedProduct] = useState('frontend');
   const [selectedPaymentType, setSelectedPaymentType] = useState('blik');
   const [selectedAdditionalOptions, setSelectedAdditionalOptions] = useState(
     []
   );
+
+  const [name, setName] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [shippingAddress, setShippingAddress] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [additionalComments, setAdditionalComments] = useState('');
+
+  const [nameError, setNameError] = useState('');
+  const [nicknameError, setNicknameError] = useState('');
+  const [shippingAddressError, setShippingAddressError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [phoneNumberError, setPhoneNumberError] = useState('');
 
   const updateFormData = (field, value) => {
     if (field === 'product') {
@@ -37,20 +56,67 @@ export function Exercise42() {
       setSelectedPaymentType(value);
     } else if (field === 'additionalOptions') {
       setSelectedAdditionalOptions(value);
+    } else if (field === 'name') {
+      setName(value);
+      if (!value) {
+        setNameError('To pole jest wymagane.');
+      } else {
+        setNameError('');
+      }
+    } else if (field === 'nickname') {
+      setNickname(value);
+      if (!value) {
+        setNicknameError('To pole jest wymagane.');
+      } else {
+        setNicknameError('');
+      }
+    } else if (field === 'shippingAddress') {
+      setShippingAddress(value);
+      if (!value) {
+        setShippingAddressError('To pole jest wymagane.');
+      } else {
+        setShippingAddressError('');
+      }
+    } else if (field === 'email') {
+      setEmail(value);
+      if (!value) {
+        setEmailError('To pole jest wymagane.');
+      } else if (!isValidEmail(value)) {
+        setEmailError('Podaj poprawny adres e-mail.');
+      } else {
+        setEmailError('');
+      }
+    } else if (field === 'phoneNumber') {
+      setPhoneNumber(value);
+      if (!value) {
+        setPhoneNumberError('To pole jest wymagane.');
+      } else {
+        setPhoneNumberError('');
+      }
+    } else if (field === 'additionalComments') {
+      setAdditionalComments(value);
     }
   };
 
   return (
     <form
+      className="form"
       onSubmit={(event) => {
         event.preventDefault();
         console.log('product:', selectedProduct);
         console.log('paymentType:', selectedPaymentType);
         console.log('additionalOptions:', selectedAdditionalOptions);
+        console.log('name:', name);
+        console.log('nickname:', nickname);
+        console.log('shippingAddress:', shippingAddress);
+        console.log('email:', email);
+        console.log('phoneNumber:', phoneNumber);
+        console.log('additionalComments:', additionalComments);
       }}
     >
       <div>
         <MainSection title="ZAMÓWIENIE PRODUKTU">
+          <br />
           <FieldSection title="Wybierz produkt*">
             <select
               name="product"
@@ -66,9 +132,7 @@ export function Exercise42() {
               ))}
             </select>
           </FieldSection>
-        </MainSection>
-        <br />
-        <MainSection title="DANE DO REALIZACJI ZAMÓWIENIA">
+          <br />
           <FieldSection title="Wybierz formę płatności*">
             <RadioButtons
               name="paymentType"
@@ -88,7 +152,32 @@ export function Exercise42() {
           </FieldSection>
         </MainSection>
         <br />
-        <MainSection title="INFORMACJE O PŁATNOŚCI"></MainSection>
+        <MainSection title="DANE DO REALIZACJI ZAMÓWIENIA">
+          <br />
+          <OrderDetailsSection
+            name={name}
+            nameError={nameError}
+            updateName={setName}
+            nickname={nickname}
+            nicknameError={nicknameError}
+            updateNickname={setNickname}
+            shippingAddress={shippingAddress}
+            shippingAddressError={shippingAddressError}
+            updateShippingAddress={setShippingAddress}
+            email={email}
+            emailError={emailError}
+            updateEmail={setEmail}
+            phoneNumber={phoneNumber}
+            phoneNumberError={phoneNumberError}
+            updatePhoneNumber={setPhoneNumber}
+            additionalComments={additionalComments}
+            updateAdditionalComments={setAdditionalComments}
+          />
+        </MainSection>
+        <br />
+        <MainSection title="ZAKŁADANIE KONTA"></MainSection>
+        <br />
+        <MainSection title="ZGODY I NEWSLETTER"></MainSection>
       </div>
       <button type="submit">WYŚLIJ</button>
     </form>
