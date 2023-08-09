@@ -4,6 +4,7 @@ import FieldSection from './FieldSection/FieldSection';
 import MainSection from './MainSection/MainSection';
 import RadioButtons from './RadioButtons/RadioButtons';
 import OrderDetailsSection from './OrderDetailsSection/OrderDetailsSection';
+import Account from './Account/Account';
 import './styles.css';
 
 const productOptions = [
@@ -49,6 +50,14 @@ export function Exercise42() {
   const [emailError, setEmailError] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
 
+  const [createAccount, setCreateAccount] = useState(false);
+  const [accountPassword, setAccountPassword] = useState('');
+
+  const [accountConfirmPassword, setAccountConfirmPassword] = useState('');
+  const [accountPasswordError, setAccountPasswordError] = useState('');
+  const [accountConfirmPasswordError, setAccountConfirmPasswordError] =
+    useState('');
+
   const updateFormData = (field, value) => {
     if (field === 'product') {
       setSelectedProduct(value);
@@ -58,43 +67,37 @@ export function Exercise42() {
       setSelectedAdditionalOptions(value);
     } else if (field === 'name') {
       setName(value);
-      if (!value) {
-        setNameError('To pole jest wymagane.');
-      } else {
-        setNameError('');
-      }
+      setNameError(value ? '' : 'To pole jest wymagane.');
     } else if (field === 'nickname') {
       setNickname(value);
-      if (!value) {
-        setNicknameError('To pole jest wymagane.');
-      } else {
-        setNicknameError('');
-      }
+      setNicknameError(value ? '' : 'To pole jest wymagane.');
     } else if (field === 'shippingAddress') {
       setShippingAddress(value);
-      if (!value) {
-        setShippingAddressError('To pole jest wymagane.');
-      } else {
-        setShippingAddressError('');
-      }
+      setShippingAddressError(value ? '' : 'To pole jest wymagane.');
     } else if (field === 'email') {
       setEmail(value);
-      if (!value) {
-        setEmailError('To pole jest wymagane.');
-      } else if (!isValidEmail(value)) {
-        setEmailError('Podaj poprawny adres e-mail.');
-      } else {
-        setEmailError('');
-      }
+      setEmailError(
+        value
+          ? isValidEmail(value)
+            ? ''
+            : 'Podaj poprawny adres e-mail.'
+          : 'To pole jest wymagane.'
+      );
     } else if (field === 'phoneNumber') {
       setPhoneNumber(value);
-      if (!value) {
-        setPhoneNumberError('To pole jest wymagane.');
-      } else {
-        setPhoneNumberError('');
-      }
+      setPhoneNumberError(value ? '' : 'To pole jest wymagane.');
     } else if (field === 'additionalComments') {
       setAdditionalComments(value);
+    } else if (field === 'createAccount') {
+      setCreateAccount(value);
+    } else if (field === 'accountPassword') {
+      setAccountPassword(value);
+      setAccountPasswordError(value.trim() === '' ? 'Hasło jest wymagane' : '');
+    } else if (field === 'accountConfirmPassword') {
+      setAccountConfirmPassword(value);
+      setAccountConfirmPasswordError(
+        value !== accountPassword ? 'Hasła nie pasują do siebie' : ''
+      );
     }
   };
 
@@ -112,6 +115,8 @@ export function Exercise42() {
         console.log('email:', email);
         console.log('phoneNumber:', phoneNumber);
         console.log('additionalComments:', additionalComments);
+        console.log('createAccount:', createAccount);
+        console.log('accountPassword:', accountPassword);
       }}
     >
       <div>
@@ -175,7 +180,20 @@ export function Exercise42() {
           />
         </MainSection>
         <br />
-        <MainSection title="ZAKŁADANIE KONTA"></MainSection>
+        <MainSection>
+          <Account
+            createAccount={createAccount}
+            setCreateAccount={setCreateAccount}
+            accountPassword={accountPassword}
+            setAccountPassword={setAccountPassword}
+            accountConfirmPassword={accountConfirmPassword}
+            setAccountConfirmPassword={setAccountConfirmPassword}
+            accountPasswordError={accountPasswordError}
+            setAccountPasswordError={setAccountPasswordError}
+            accountConfirmPasswordError={accountConfirmPasswordError}
+            setAccountConfirmPasswordError={setAccountConfirmPasswordError}
+          />
+        </MainSection>
         <br />
         <MainSection title="ZGODY I NEWSLETTER"></MainSection>
       </div>

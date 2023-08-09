@@ -14,7 +14,6 @@ const OrderDetailsSection = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
   const [additionalComments, setAdditionalComments] = useState('');
-  const [additionalCommentsError, setAdditionalCommentsError] = useState('');
 
   const validateName = (value) => {
     if (value.trim() === '') {
@@ -50,7 +49,7 @@ const OrderDetailsSection = () => {
   };
 
   const validatePhoneNumber = (value) => {
-    const phonePattern = /^\d{10}$/;
+    const phonePattern = /^\d{9}$/;
     if (!phonePattern.test(value)) {
       setPhoneNumberError('Nieprawidłowy numer telefonu');
     } else {
@@ -153,9 +152,6 @@ const OrderDetailsSection = () => {
             placeholder="Wpisz dodatkowe uwagi do zamówienia"
             required
           />
-          {additionalCommentsError && (
-            <span className="error-message">{additionalCommentsError}</span>
-          )}
         </div>
       </FieldSection>
     </>
