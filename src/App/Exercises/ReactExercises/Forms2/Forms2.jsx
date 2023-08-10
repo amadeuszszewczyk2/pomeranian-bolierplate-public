@@ -5,6 +5,24 @@ import { MainSection } from './MainSection/MainSection';
 import { RadioButtons } from './RadioButtons/RadioButtons';
 import { Checkboxes } from './Checkboxes/Checkboxes';
 
+import {
+  getFirestore,
+  collection,
+  doc,
+  addDoc,
+  getDoc,
+} from 'firebase/firestore';
+
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+
+{
+  /* const firebaseConfig = {*/
+}
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 const validateEmail = (value) => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -83,132 +101,194 @@ export function Exercise43() {
     });
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const { nameAndSurname, email, product, paymentType, consents } = formData;
+
     if (nameAndSurname && email && product && paymentType && consents) {
-      console.log('DANE WYSŁANE POPRAWNIE: ', formData);
+      try {
+        const db = getFirestore(app);
+
+        const docRef = await addDoc(collection(db, 'orders'), {
+          nameAndSurname: nameAndSurname,
+          paymentType: paymentType,
+          consents: consents,
+          email: email,
+        });
+
+        console.log('Document written with ID: ', docRef.id);
+        setIsSubmissionSuccessful(true);
+        setOrderId(docRef.id);
+
+        const newOrderDoc = await getDoc(doc(db, 'orders', docRef.id));
+        setOrderData(newOrderDoc.data());
+      } catch (e) {
+        console.error('Error adding document: ', e);
+      }
     } else {
       setIsAllRequiredFieldsFilled(false);
     }
   }
 
+  const [isSubmissionSuccessful, setIsSubmissionSuccessful] = useState(false);
+
+  const [orderId, setOrderId] = useState('');
+
+  const [orderData, setOrderData] = useState(null);
+
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        handleSubmit();
-      }}
-    >
-      <MainSection title="ZAMÓWIENIE PRODUKTU">
-        <FieldSection title="Wybierz produkt*">
-          <select
-            name="product"
-            value={formData.product}
-            onChange={(event) => {
-              updateFormData(event);
-            }}
+    <>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          handleSubmit();
+        }}
+      >
+        <MainSection title="ZAMÓWIENIE PRODUKTU">
+          <FieldSection title="Wybierz produkt*">
+            <select
+              name="product"
+              value={formData.product}
+              onChange={(event) => {
+                updateFormData(event);
+              }}
+            >
+              {productOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </FieldSection>
+          <FieldSection title="Wybierz formę płatności*">
+            <RadioButtons
+              name="paymentType"
+              options={paymentTypeOptions}
+              value={formData.paymentType}
+              onChange={updateFormData}
+            />
+          </FieldSection>
+          <FieldSection title="Opcje dodatkowe do zamówienia">
+            <Checkboxes
+              list={additionalOptionList.map((item) => {
+                return {
+                  ...item,
+                  isChecked: formData.additionalOptions[item.fieldName],
+                };
+              })}
+              onChange={updateAdditionalOptions}
+            />
+          </FieldSection>
+        </MainSection>
+
+        <MainSection title="DANE DO REALIZACJI ZAMÓWIENIA">
+          <FieldSection title="Imię i nazwisko">
+            <input
+              type="text"
+              name="nameAndSurname"
+              value={formData.nameAndSurname}
+              onChange={updateFormData}
+              className={!isNameAndSurnameValid ? 'input-field-error' : ''}
+            />
+            {!isNameAndSurnameValid && (
+              <p className="input-field-error-message">
+                Nie podałeś(-aś) nazwiska!
+              </p>
+            )}
+          </FieldSection>
+          <FieldSection title="Email">
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={updateFormData}
+              className={isEmailValid === false ? 'input-field-error' : ''}
+              onBlur={() => {
+                setIsEmailValid(validateEmail(formData.email));
+              }}
+            />
+            {isEmailValid === false && (
+              <p className="input-field-error-message">
+                Email jest niepoprawny!
+              </p>
+            )}
+          </FieldSection>
+
+          <FieldSection title="Uwagi dodatkowe">
+            <textarea
+              name="details"
+              cols="40"
+              rows="10"
+              style={{ resize: 'none' }}
+              value={formData.details}
+              onChange={updateFormData}
+            />
+          </FieldSection>
+        </MainSection>
+
+        <MainSection title="ZGODY">
+          <FieldSection title="Regulamin">
+            <Checkboxes
+              list={[
+                {
+                  fieldName: 'consents',
+                  label: 'akceptuję regulamin*',
+                  isChecked: formData.consents,
+                },
+              ]}
+              onChange={(_, newValue) => {
+                setIsAllRequiredFieldsFilled(true);
+                setFormData({
+                  ...formData,
+                  consents: newValue,
+                });
+              }}
+            />
+          </FieldSection>
+        </MainSection>
+
+        {!isAllRequiredFieldsFilled && (
+          <p className="input-field-error-message">
+            Wypełnij wszystkie pola wymagane!
+          </p>
+        )}
+
+        <button type="submit" disabled={!isFieldsValid}>
+          WYŚLIJ
+        </button>
+        <br />
+        <br />
+        {isSubmissionSuccessful && <p>Twoje zamówienie zostało wysłane!</p>}
+      </form>
+
+      {orderId && modalOpen && (
+        <div className="formModalContainer">
+          <div className="formModal">
+            {orderData ? (
+              <div>
+                <h2>Szczegóły zamówienia</h2>
+                <p>Numer zamówienia: {orderId}</p>
+                <p>Rodzaj płatności: {orderData.paymentType}</p>
+              </div>
+            ) : (
+              <p>Loading order details...</p>
+            )}
+          </div>
+          <button
+            className="modal-ok-button"
+            onClick={() => setModalOpen(false)}
           >
-            {productOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </FieldSection>
-        <FieldSection title="Wybierz formę płatności*">
-          <RadioButtons
-            name="paymentType"
-            options={paymentTypeOptions}
-            value={formData.paymentType}
-            onChange={updateFormData}
-          />
-        </FieldSection>
-        <FieldSection title="Opcje dodatkowe do zamówienia">
-          <Checkboxes
-            list={additionalOptionList.map((item) => {
-              return {
-                ...item,
-                isChecked: formData.additionalOptions[item.fieldName],
-              };
-            })}
-            onChange={updateAdditionalOptions}
-          />
-        </FieldSection>
-      </MainSection>
-
-      <MainSection title="DANE DO REALIZACJI ZAMÓWIENIA">
-        <FieldSection title="Imię i nazwisko">
-          <input
-            type="text"
-            name="nameAndSurname"
-            value={formData.nameAndSurname}
-            onChange={updateFormData}
-            className={!isNameAndSurnameValid ? 'input-field-error' : ''}
-          />
-          {!isNameAndSurnameValid && (
-            <p className="input-field-error-message">
-              Nie podałeś(-aś) nazwiska!
-            </p>
-          )}
-        </FieldSection>
-        <FieldSection title="Email">
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={updateFormData}
-            className={isEmailValid === false ? 'input-field-error' : ''}
-            onBlur={() => {
-              setIsEmailValid(validateEmail(formData.email));
-            }}
-          />
-          {isEmailValid === false && (
-            <p className="input-field-error-message">Email jest niepoprawny!</p>
-          )}
-        </FieldSection>
-
-        <FieldSection title="Uwagi dodatkowe">
-          <textarea
-            name="details"
-            cols="40"
-            rows="10"
-            style={{ resize: 'none' }}
-            value={formData.details}
-            onChange={updateFormData}
-          />
-        </FieldSection>
-      </MainSection>
-
-      <MainSection title="ZGODY">
-        <FieldSection title="Regulamin">
-          <Checkboxes
-            list={[
-              {
-                fieldName: 'consents',
-                label: 'apceptuję regulamin*',
-                isChecked: formData.consents,
-              },
-            ]}
-            onChange={(_, newValue) => {
-              setIsAllRequiredFieldsFilled(true);
-              setFormData({
-                ...formData,
-                consents: newValue,
-              });
-            }}
-          />
-        </FieldSection>
-      </MainSection>
-
-      {!isAllRequiredFieldsFilled && (
-        <p className="input-field-error-message">
-          Wypełnij wszystkie pola wymagane!
-        </p>
+            Zamknij
+          </button>
+        </div>
       )}
 
-      <button type="submit" disabled={!isFieldsValid}>
-        WYŚLIJ
-      </button>
-    </form>
+      {orderId && !modalOpen && (
+        <button onClick={() => setModalOpen(true)}>
+          Pokaż szczegóły zamówienia
+        </button>
+      )}
+    </>
   );
 }

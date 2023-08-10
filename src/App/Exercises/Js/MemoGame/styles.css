@@ -84,7 +84,7 @@
   line-height: 31px;
   letter-spacing: 0em;
   text-align: center;
-  color: black;
+  color: white;
   width: 240px;
   height: Hug (56px);
 }
@@ -104,11 +104,10 @@
   line-height: 31px;
   letter-spacing: 0em;
   text-align: center;
-  color: black;
+  color: white;
   width: 240px;
   height: Hug (56px);
 }
-
 
 .gameButtonsRows button:active {
   background: #fe3756;
@@ -119,7 +118,6 @@
   background: #37a807;
   border-color: #37a807;
 }
-
 
 .gameButtonsRows button.activeButton {
   background: #fe3756;
@@ -132,7 +130,7 @@
   font-weight: 500;
   line-height: 150px;
   letter-spacing: 0em;
-  text-align: center;  
+  text-align: center;
 }
 
 .grabCursor {
@@ -149,11 +147,11 @@
 }
 
 .settings {
-font-family: Poppins;
-font-size: 18px;
-font-weight: 400;
-letter-spacing: 0px;
-text-align: left;  
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 .settings2 {
@@ -161,12 +159,11 @@ text-align: left;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0px;
-  text-align: left;  
-  }
-
+  text-align: left;
+}
 
 .square.matchedGreen {
-  background-color: #E2FBD7;
+  background-color: #e2fbd7;
 }
 
 .square.matchedGreen.visible {
@@ -174,7 +171,7 @@ text-align: left;
 }
 
 .square.incorrect {
-  background-color: #F3AEA8;
+  background-color: #f3aea8;
 }
 
 .congratulations {
