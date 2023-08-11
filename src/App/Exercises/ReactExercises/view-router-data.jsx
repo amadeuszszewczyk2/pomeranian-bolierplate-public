@@ -8,6 +8,8 @@ import { BTCMetaData } from './BTC/router-data';
 import { MaterialUIBasicElements2MetaData } from './MaterialUIBasicElements2/router-data';
 import { MaterialUIBasicElements3MetaData } from './MaterialUIBasicElements3/router-data';
 import { UseRefMetaData } from './UseRef/router-data';
+import { FormsMetaData } from './Forms/router-data';
+import { Forms2MetaData } from './Forms2/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -18,6 +20,8 @@ export const blockRouterMetaData = [
   MaterialUIBasicElements3MetaData,
   BTCMetaData,
   UseRefMetaData,
+  FormsMetaData,
+  Forms2MetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

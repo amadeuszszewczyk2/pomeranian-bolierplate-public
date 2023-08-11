@@ -1,0 +1,3 @@
+.radio input[type='radio']:checked + label::before {
+  border-color: red;
+}

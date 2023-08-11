@@ -77,7 +77,10 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
     <div className="container">
       <div className="mole-game-settings">
         <div className="strings1">
-          <p>Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w którym się pojawił.</p>
+          <p>
+            Gra polegająca na podążaniu za krecikiem i trafieniu na kwadrat, w
+            którym się pojawił.
+          </p>
         </div>
 
         <div className="settings-row">
@@ -93,9 +96,7 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
               </button>
             ))}
           </div>
-          <div className="settings-value">
-            {formatTime(selectedGameTime)}
-          </div>
+          <div className="settings-value">{formatTime(selectedGameTime)}</div>
         </div>
 
         <div className="settings-row">
@@ -104,7 +105,9 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
             {moleCountOption.map(({ label }, index) => (
               <button
                 key={index}
-                onClick={() => handleMoleCountSelection(Number(label[0]), index)}
+                onClick={() =>
+                  handleMoleCountSelection(Number(label[0]), index)
+                }
                 className={clickedMoleCountIndex === index ? 'clicked' : ''}
               >
                 {label}
@@ -128,10 +131,13 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
             <div className="settings-label">PRZYCISKI STERUJĄCE</div>
             <div className="settings-buttons">
               {selectedGameTime !== 0 && (
-                <button className="start-button" onClick={() => {
-                  setIsGameStarted(true);
-                  onStartGame(selectedGameTime, selectedMoleCount);
-                }}>
+                <button
+                  className="start-button"
+                  onClick={() => {
+                    setIsGameStarted(true);
+                    onStartGame(selectedGameTime, selectedMoleCount);
+                  }}
+                >
                   START
                 </button>
               )}
@@ -139,9 +145,11 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
           </div>
         )}
 
-        {(!isGameStarted && selectedGameTime === 0) && (
+        {!isGameStarted && selectedGameTime === 0 && (
           <div className="settings-row">
-            <div className="game-time-up-message">! Gratulacje! Twój wynik to {score} złapane krety</div>
+            <div className="game-time-up-message">
+              Koniec gry! Zagraj ponownie!
+            </div>
             <button className="restart-button" onClick={handleRestartGame}>
               RESTART
             </button>
@@ -151,4 +159,3 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
     </div>
   );
 };
-
