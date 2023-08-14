@@ -1,0 +1,8 @@
+.input-container3 {
+  display: flex;
+  align-items: center;
+}
+
+.input-container3 label {
+  margin-left: 5px;
+}
