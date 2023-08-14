@@ -19,38 +19,34 @@ export function AppHeader() {
         <Logo />
       </Link>
       <div className="menu">
-      <button className="settings-btn">
-  <img
-    src={settingsIcon}
-    className="settings-logo"
-    alt=""
-    onClick={handleSettingsClick}
-  />
-</button>
+        {/* <button className="settings-btn">
+          <img
+            src={settingsIcon}
+            className="settings-logo"
+            alt=""
+            onClick={handleSettingsClick}
+          />
+        </button> */}
 
         <div className="user-profile">
-        <img src={profilowe} className="profilowe" alt="" />
-         
+          <img src={profilowe} className="profilowe" alt="" />
+
           <div className="user">
             <p className="user-name">Amadeusz</p>
             <p className="user-position">Szewczyk</p>
           </div>
         </div>
-        <button
+        {/*<button
           className="arrow-btn"
           onClick={() => {
             console.log('Arrow Clicked');
           }}
         >
           <img src={arrowDown} className="arrow" alt="" />
-        </button>
+        </button> */}
 
         {/* <div className="header-title"></div> */}
       </div>
     </header>
   );
-
-  
 }
-
-

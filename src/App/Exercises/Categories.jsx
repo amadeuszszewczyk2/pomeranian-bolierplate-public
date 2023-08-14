@@ -12,10 +12,11 @@ export const Categories = () => {
         <NavLink to="html-css">HTML & CSS</NavLink>
         <NavLink to="js">Java Script</NavLink>
         <NavLink to="react">React</NavLink>
+        {/*
         <NavLink to="web-api">Web API</NavLink>
         <NavLink to="async">Asynchrony</NavLink>
-        <NavLink to="firebase">Firebase</NavLink>
-      
+        <NavLink to="firebase">Firebase</NavLink> 
+        */}
       </div>
     </>
   );

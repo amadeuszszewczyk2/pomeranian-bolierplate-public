@@ -9,16 +9,16 @@ import { Exercises } from './App/Exercises';
 import { Calendar } from './App/Calendar/Calendar';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ/FAQ';
-import { Settings } from './App/Settings/Setttings';
+import { Settings } from './App/Settings/Settings';
 import { Login } from './Login';
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
-          <Route index element={<Navigate to="/login" />} />  
-          <Route path="/login" element={<Login />} /> 
-          <Route path="" element={<Layout withSidebar />}>
+        <Route index element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="" element={<Layout withSidebar />}>
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="CV/*" element={<CV />} />
           <Route path="blocks/*" element={<Blocks />} />
