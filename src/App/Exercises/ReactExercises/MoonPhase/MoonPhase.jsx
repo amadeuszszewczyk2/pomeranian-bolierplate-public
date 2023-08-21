@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import './styles.css';
 import Calendar from './Calendar.jsx';
 
-const phases = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'];
+const phases = [
+  '🌑', // Nów
+  '🌒', // Pierwsza po nów
+  '🌓', // Pierwsza kwadra
+  '🌔', // Trzy dni przed pełnią
+  '🌕', // Pełnia
+  '🌖', // Trzy dni po pełni
+  '🌗', // Ostatnia kwadra
+  '🌘', // Ostatnia przed nów
+];
 
 export function MoonPhaseApp() {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -18,7 +27,7 @@ export function MoonPhaseApp() {
 
   return (
     <div className="moon-phase-app">
-      <h1>Faza księżyca</h1>
+      <h1>Moon phase</h1>
       <div className="moon-phase-display">
         <div className="moon">{phases[moonPhaseIndex(selectedDate)]}</div>
       </div>

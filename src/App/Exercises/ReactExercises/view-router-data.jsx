@@ -11,6 +11,7 @@ import { UseRefMetaData } from './UseRef/router-data';
 import { FormsMetaData } from './Forms/router-data';
 import { Forms2MetaData } from './Forms2/router-data';
 import { MoonPhaseMetaData } from './MoonPhase/router-data';
+import { PlanetsMetaData } from './Planets/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -24,6 +25,7 @@ export const blockRouterMetaData = [
   FormsMetaData,
   Forms2MetaData,
   MoonPhaseMetaData,
+  PlanetsMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

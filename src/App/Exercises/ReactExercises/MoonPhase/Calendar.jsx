@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 const Calendar = ({ selectedDate, onDateChange }) => {
   const [date, setDate] = useState(selectedDate || new Date());
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedDay, setSelectedDay] = useState(selectedDate.getDate());
 
-  const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  useEffect(() => {
+    setSelectedDay(selectedDate.getDate());
+  }, [selectedDate]);
 
   const handleYearChange = (event) => {
     const selectedYear = parseInt(event.target.value);
@@ -33,26 +23,6 @@ const Calendar = ({ selectedDate, onDateChange }) => {
     const newDate = new Date(date);
     newDate.setMonth(selectedMonth);
     setDate(newDate);
-  };
-
-  const renderYearOptions = () => {
-    const years = [];
-    for (let year = 1970; year <= 2050; year++) {
-      years.push(
-        <option value={year} key={year}>
-          {year}
-        </option>
-      );
-    }
-    return years;
-  };
-
-  const renderMonthOptions = () => {
-    return months.map((month, index) => (
-      <option value={index} key={index}>
-        {month}
-      </option>
-    ));
   };
 
   const getDaysInMonth = (year, month) => {
@@ -77,6 +47,40 @@ const Calendar = ({ selectedDate, onDateChange }) => {
     setSelectedDay(day);
     const newDate = new Date(date.getFullYear(), date.getMonth(), day);
     onDateChange(newDate);
+  };
+
+  const renderYearOptions = () => {
+    const years = [];
+    for (let year = 1970; year <= 2050; year++) {
+      years.push(
+        <option value={year} key={year}>
+          {year}
+        </option>
+      );
+    }
+    return years;
+  };
+
+  const renderMonthOptions = () => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return months.map((month, index) => (
+      <option value={index} key={index}>
+        {month}
+      </option>
+    ));
   };
 
   const renderCalendar = () => {
@@ -110,6 +114,7 @@ const Calendar = ({ selectedDate, onDateChange }) => {
           onClick={() => handleDayClick(i)}
         >
           <span className="day-number">{i}</span>
+          {isCurrentDay && <span className="tooltip">Today</span>}
         </div>
       );
     }

@@ -12,9 +12,10 @@
   width: 500px;
   border: 5px solid #ccc;
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   margin: 0 auto;
   margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-header {
@@ -29,12 +30,17 @@
   border: none;
   cursor: pointer;
   font-size: 25px;
+  transition: color 0.3s;
+}
+
+.calendar-header button:hover {
+  color: #3498db;
 }
 
 .calendar-weekdays {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .calendar-weekday {
@@ -45,7 +51,7 @@
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 5px;
+  grid-gap: 10px;
 }
 
 .calendar-day {
@@ -55,6 +61,12 @@
   height: 50px;
   border: 2px solid #ccc;
   border-radius: 20px;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #e0e0e0;
 }
 
 .calendar-day.empty {
@@ -62,11 +74,8 @@
 }
 
 .calendar-day.current-day {
-  background-color: #ccc;
-}
-
-.calendar-day.current-day {
-  background-color: #ccc;
+  background-color: #e8e8e8;
+  border: 2px solid red;
 }
 
 .calendar-day.weekend {
@@ -76,8 +85,23 @@
 .calendar-day.selected {
   background-color: #3498db;
   color: white;
+  border: 2px solid #3498db;
 }
 
 .calendar-day.selected .day-number {
   font-weight: bold;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: white;
+  white-space: nowrap;
+  pointer-events: none;
 }
