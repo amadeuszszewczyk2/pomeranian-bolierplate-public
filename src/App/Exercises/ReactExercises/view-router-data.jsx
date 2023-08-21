@@ -10,6 +10,7 @@ import { MaterialUIBasicElements3MetaData } from './MaterialUIBasicElements3/rou
 import { UseRefMetaData } from './UseRef/router-data';
 import { FormsMetaData } from './Forms/router-data';
 import { Forms2MetaData } from './Forms2/router-data';
+import { MoonPhaseMetaData } from './MoonPhase/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -22,6 +23,7 @@ export const blockRouterMetaData = [
   UseRefMetaData,
   FormsMetaData,
   Forms2MetaData,
+  MoonPhaseMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
