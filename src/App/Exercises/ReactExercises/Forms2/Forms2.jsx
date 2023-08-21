@@ -16,9 +16,15 @@ import {
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 
-{
-  /* const firebaseConfig = {*/
-}
+const firebaseConfig = {
+  apiKey: 'AIzaSyBhZd9lXssklp5u_9IRa6s9YmboVJMdSo8',
+  authDomain: 'pomeranian-firebase-dbas.firebaseapp.com',
+  projectId: 'pomeranian-firebase-dbas',
+  storageBucket: 'pomeranian-firebase-dbas.appspot.com',
+  messagingSenderId: '1072802343954',
+  appId: '1:1072802343954:web:1533639ecca583036d3ccb',
+  measurementId: 'G-6CD9QHD0VT',
+};
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
