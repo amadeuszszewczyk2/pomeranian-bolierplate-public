@@ -9,9 +9,20 @@ import { Tables3MetaData } from './Tables3/router-data';
 import { FloatsMetaData } from './Floats/router-data';
 import { FloatsFigmaDesignMetaData } from './FloatsFigmaDesign/router-data';
 import { SignupMetaData } from './Signup/router-data';
+import { HomepageMetaData } from './Homepage/router-data';
 
-
-export const blockRouterMetaData = [Exercise_exampleMetaData, SelectorsAndCascadeMetaData, GoogleFontsMetaData, ExerciseBoxModelMetaData, TablesMetaData, Tables2MetaData, Tables3MetaData, FloatsMetaData, FloatsFigmaDesignMetaData, SignupMetaData];
+export const blockRouterMetaData = [
+  Exercise_exampleMetaData,
+  SelectorsAndCascadeMetaData,
+  GoogleFontsMetaData,
+  ExerciseBoxModelMetaData,
+  TablesMetaData,
+  Tables2MetaData,
+  Tables3MetaData,
+  FloatsMetaData,
+  FloatsFigmaDesignMetaData,
+  SignupMetaData,
+  HomepageMetaData,
+];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
-
