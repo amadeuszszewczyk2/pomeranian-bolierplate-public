@@ -75,7 +75,7 @@
 
 .calendar-day.current-day {
   background-color: #e8e8e8;
-  border: 2px solid red;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .calendar-day.weekend {

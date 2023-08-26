@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-
 import './styles/aside.css';
 
 import { HouseIcon } from '../Components/Icons/HouseIcon';
@@ -8,6 +7,8 @@ import { ElementIcon } from '../Components/Icons/ElementIcon';
 import { EditIcon } from '../Components/Icons/EditIcon';
 import { CalendarIcon } from '../Components/Icons/CalendarIcon';
 import { SettingIcon } from '../Components/Icons/SettingIcon';
+import BlogIcon from '../Components/Icons/BlogIcon.svg';
+import FaqIcon from '../Components/Icons/FaqIcon.svg';
 
 export function AppAside() {
   return (
@@ -46,14 +47,24 @@ export function AppAside() {
 
           <li>
             <NavLink className="aside-row" to="blog">
-              <SettingIcon className="menu-icon" />
+              <img
+                src={BlogIcon}
+                className="menu-icon"
+                alt="Blog"
+                style={{ width: '23px', height: '23px' }}
+              />
               Blog
             </NavLink>
           </li>
 
           <li>
             <NavLink className="aside-row" to="faq">
-              <SettingIcon className="menu-icon" />
+              <img
+                src={FaqIcon}
+                className="menu-icon"
+                alt="FAQ"
+                style={{ width: '23px', height: '23px' }}
+              />
               FAQ
             </NavLink>
           </li>

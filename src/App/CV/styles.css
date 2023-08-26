@@ -1,0 +1,29 @@
+.img-tech-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.tech-img {
+  width: 60px;
+  height: 60px;
+  margin: 0 20px 0 0;
+}
+
+.tech-container {
+  text-align: center;
+  margin: 0 10px;
+}
+
+.tech-text {
+  font-size: 12px;
+  width: 60px;
+  white-space: nowrap;
+}

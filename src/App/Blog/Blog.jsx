@@ -5,39 +5,57 @@ export const Blog = () => {
     <div>
       {/* First Blog Entry */}
       <div className="blog-container">
-        <div className="blog-date">
-          01-07-2023
-        </div>
+        <div className="blog-date">01-07-2023</div>
 
         <div className="blog-content">
-          <h1 className="blog-title">Why are we so nostalgic for the 1990s?</h1>
+          <h1 className="blog-title">
+            The Future of AI: Opportunities and Challenges
+          </h1>
           <p className="blog-text">
-            Pop culture used to define a generation, but it seems the cultural, music, and fashion trends of the 1990s have been recycled, and what Generation X considered its rite of passage into adulthood is being discovered and claimed by fledgling grown-ups as their own.
+            Artificial Intelligence (AI) is evolving at a rapid pace, unlocking
+            a world of opportunities across various industries. From autonomous
+            vehicles to intelligent chatbots, AI is revolutionizing the way we
+            interact with the world. However, as AI continues to develop, it
+            also presents several challenges that need to be addressed to
+            maximize its potential and minimize its risks.
           </p>
           <p className="blog-text">
-            There's been a resurgence of vinyl as the trend-setters' choice of music consumption rather than the ease of a digital download, and now the hipsters have discovered the nostalgic sound of a whirring cassette from which to enjoy the dulcet tones of everyone from Salt-N-Pepa to Rick Astley.
+            Ethical considerations, data privacy, and the development of safe
+            and explainable AI are some of the key challenges that researchers
+            and practitioners are working to address. As AI continues to evolve,
+            it is crucial to strike a balance between innovation and responsible
+            development.
           </p>
         </div>
 
         <div className="blog-author">
           <p className="blog-author-name">Jan Kowalski</p>
-          <p className="blog-author-role">Senior Marketing Specialist</p>
+          <p className="blog-author-role">AI Specialist</p>
         </div>
       </div>
 
       {/* Second Blog Entry */}
       <div className="blog-container">
-        <div className="blog-date">
-          19-07-2023
-        </div>
+        <div className="blog-date">19-07-2023</div>
 
         <div className="blog-content">
-          <h1 className="blog-title">The Rise of Artificial Intelligence in Everyday Life</h1>
+          <h1 className="blog-title">
+            AI and Healthcare: A Match Made for the Future
+          </h1>
           <p className="blog-text">
-            Artificial Intelligence (AI) has permeated various aspects of our daily lives, transforming the way we live and interact with technology. From voice assistants like Siri and Alexa to personalized recommendations on streaming platforms, AI has become an integral part of our routines.
+            The integration of Artificial Intelligence (AI) in healthcare has
+            been a game-changer in recent years. AI-powered applications and
+            devices are helping doctors and medical professionals diagnose
+            diseases more accurately, predict patient outcomes, and develop
+            personalized treatment plans. From medical imaging to drug
+            discovery, AI is revolutionizing the way healthcare is delivered.
           </p>
           <p className="blog-text">
-            Advancements in AI have led to significant improvements in fields such as healthcare, finance, and transportation. Machine learning algorithms now help diagnose diseases, predict market trends, and optimize logistics operations.
+            Despite the progress, there are still challenges to overcome, such
+            as data privacy, algorithmic bias, and the need for robust
+            validation. However, with continuous research and development, AI
+            has the potential to transform healthcare for the better, making it
+            more accessible, efficient, and personalized.
           </p>
         </div>
 
@@ -49,4 +67,3 @@ export const Blog = () => {
     </div>
   );
 };
-
