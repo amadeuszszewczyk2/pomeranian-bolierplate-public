@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
   const defaultGameTime = 1 * 60 * 1000;
+  const defaultMoleCount = 1;
 
   const [selectedGameTime, setSelectedGameTime] = useState(defaultGameTime);
-  const [selectedMoleCount, setSelectedMoleCount] = useState(1);
   const [score, setScore] = useState(0);
   const [clickedGameTimeIndex, setClickedGameTimeIndex] = useState(null);
-  const [clickedMoleCountIndex, setClickedMoleCountIndex] = useState(null);
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const [restart, setRestart] = useState(false); // Dodany stan restartu
 
   const gameTimeOption = [
     { label: '1 minuta', timeValue: 1 * 60 * 1000 },
@@ -17,28 +15,15 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
     { label: '3 minuty', timeValue: 3 * 60 * 1000 },
   ];
 
-  const moleCountOption = [
-    { label: '1 kret' },
-    /* { label: '2 krety' },
-    { label: '3 krety' }, */
-  ];
-
   const handleGameTimeSelection = (timeValue, index) => {
     setSelectedGameTime(timeValue);
     setClickedGameTimeIndex(index);
   };
 
-  const handleMoleCountSelection = (count, index) => {
-    setSelectedMoleCount(count);
-    setClickedMoleCountIndex(index);
-  };
-
   const handleRestartGame = () => {
     setSelectedGameTime(defaultGameTime);
-    setSelectedMoleCount(1);
     setScore(0);
     setIsGameStarted(false);
-    setRestart(true);
     onRestart();
   };
 
@@ -99,24 +84,6 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
           <div className="settings-value">{formatTime(selectedGameTime)}</div>
         </div>
 
-        <div className="settings-row">
-          <div className="settings-label">LICZBA KRETÓW</div>
-          <div className="settings-buttons">
-            {moleCountOption.map(({ label }, index) => (
-              <button
-                key={index}
-                onClick={() =>
-                  handleMoleCountSelection(Number(label[0]), index)
-                }
-                className={clickedMoleCountIndex === index ? 'clicked' : ''}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-          <div className="settings-value">{selectedMoleCount}</div>
-        </div>
-
         {isGameStarted ? (
           <div className="settings-row">
             <div className="settings-label">PRZYCISKI STERUJĄCE</div>
@@ -135,7 +102,7 @@ export const MoleGameSettings = ({ moleArray, onStartGame, onRestart }) => {
                   className="start-button"
                   onClick={() => {
                     setIsGameStarted(true);
-                    onStartGame(selectedGameTime, selectedMoleCount);
+                    onStartGame(selectedGameTime, defaultMoleCount);
                   }}
                 >
                   START

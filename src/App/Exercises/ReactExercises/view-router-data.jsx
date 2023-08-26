@@ -20,10 +20,10 @@ export const blockRouterMetaData = [
   MaterialUIBasicElementsMetaData,
   MaterialUIBasicElements2MetaData,
   MaterialUIBasicElements3MetaData,
-  BTCMetaData,
   UseRefMetaData,
   FormsMetaData,
   Forms2MetaData,
+  BTCMetaData,
   MoonPhaseMetaData,
   PlanetsMetaData,
 ];

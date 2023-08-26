@@ -4,7 +4,9 @@ import { MoleGameBoard } from './MoleGameBoard';
 import './styles.css';
 
 export function Mole({ onClick }) {
-  const [moleArray, setMoleArray] = useState(Array(2 * 8).fill({ isVisible: false, isWhacked: false }));
+  const [moleArray, setMoleArray] = useState(
+    Array(2 * 8).fill({ isVisible: false, isWhacked: false })
+  );
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [selectedGameTime, setSelectedGameTime] = useState(2 * 60 * 1000);
@@ -112,14 +114,15 @@ export function Mole({ onClick }) {
 
   return (
     <>
-      <MoleGameSettings moleArray={moleArray} onStartGame={startGame} onRestart={handleRestart} />
+      <MoleGameSettings
+        moleArray={moleArray}
+        onStartGame={startGame}
+        onRestart={handleRestart}
+      />
       <p className="score">WYNIK: {score}</p>
-      {isGameStarted && <MoleGameBoard moleArray={moleArray} onMoleClick={handleMoleClick} />}
+      {isGameStarted && (
+        <MoleGameBoard moleArray={moleArray} onMoleClick={handleMoleClick} />
+      )}
     </>
   );
 }
-
-
-
-
-
