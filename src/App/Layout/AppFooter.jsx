@@ -6,12 +6,12 @@ const phone = '+48 502 667 736';
 export function AppFooter() {
   return (
     <footer>
-      <div>
+      <div className="hide-on-mobile">
         Projekt uzyskał dofinansowanie ze środków Unii Europejskiej z
         Europejskiego Funduszu Rozwoju
       </div>
       <a href={`mailto:${email}`}>{`${email}`}</a>
-      <div>
+      <div className="hide-on-mobile">
         Regionalnego w ramach projektu grantowego „Invest in Pomerania 2020”.
       </div>
       <a href={`tel:${phone}`}>{`Tel: ${phone}`}</a>

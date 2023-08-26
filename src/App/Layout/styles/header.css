@@ -20,9 +20,8 @@ header.header-title {
   font-weight: normal;
 }
 
-header .logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerlogo {
+  margin-top: 15px;
 }
 
 .profilowe {
@@ -38,28 +37,12 @@ header .logo {
   gap: 53px;
 }
 
-.menu .settings-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid transparent;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.menu .settings-btn:hover {
-  border: 5px dotted lightgray;
-  transition: 0.2s linear;
-}
-
 .menu .user-profile {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-right: 50px;
+  margin-right: 5px;
+  margin-top: 10px;
 }
 
 .user p {
@@ -81,11 +64,15 @@ header .logo {
   background-color: transparent;
 }
 
-.arrow {
-  rotate: 90deg;
+.logout {
+  background-color: #23213d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.arrow:hover {
-  rotate: 0deg;
-  transition: 0.1s linear;
+.logout:hover {
+  background-color: #666666;
 }
