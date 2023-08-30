@@ -51,7 +51,6 @@ export const blockRouterMetaData = [
   BooleanMetaData,
   ObjectsMetaData,
   IF2MetaData,
-
   ForMetaData,
   WhileMetaData,
   Array1MetaData,

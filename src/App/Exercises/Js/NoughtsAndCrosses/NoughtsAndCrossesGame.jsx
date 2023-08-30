@@ -22,7 +22,11 @@ export const Exercise11 = () => {
     ];
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
         return squares[a];
       }
     }
@@ -151,11 +155,21 @@ export const Exercise11 = () => {
       <div className="game-info">
         <div>{status}</div>
         <div>
-          Gracz 1: <input type="text" value={player1} onChange={(e) => setPlayer1(e.target.value)} />
+          Gracz 1:{' '}
+          <input
+            type="text"
+            value={player1}
+            onChange={(e) => setPlayer1(e.target.value)}
+          />
         </div>
         {mode === 'pvp' && (
           <div>
-            Gracz 2: <input type="text" value={player2} onChange={(e) => setPlayer2(e.target.value)} />
+            Gracz 2:{' '}
+            <input
+              type="text"
+              value={player2}
+              onChange={(e) => setPlayer2(e.target.value)}
+            />
           </div>
         )}
         <div>
@@ -171,7 +185,3 @@ export const Exercise11 = () => {
     </div>
   );
 };
-
-
-
-
