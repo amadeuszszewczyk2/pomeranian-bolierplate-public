@@ -1,6 +1,6 @@
 import './styles/footer.css';
 
-const email = 'amadeusz.szewczyk@pomeranian.it';
+const email = 'amadeusz.szewczyk@gmail.com';
 const phone = '+48 502 667 736';
 
 export function AppFooter() {
