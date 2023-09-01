@@ -34,6 +34,22 @@ export const CV = () => {
       </div>
       <br></br>
       <br></br>
+      <div className="img-tech-stack">
+        <b>My GitHub:</b>
+        <div className="tech-container">
+          <br></br>
+          <a
+            href="https://github.com/amadeuszszewczyk2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={github} alt="GitHub" className="tech-img" />
+          </a>
+          <div className="tech-text">GitHub</div>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
       <b>My tech-stack:</b>
       <br></br>
       <br></br>

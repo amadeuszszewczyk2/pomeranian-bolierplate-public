@@ -5,19 +5,30 @@ import { faPlusSquare, faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 
 const faqData = [
   {
-    question: 'Lorem ipsum dolor sit amet?',
+    question: 'Jakie języki programowania i technologie znam?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel purus sem. Sed dictum ligula in libero suscipit, in porta erat ornare. Mauris vel nunc vitae justo aliquet posuere.',
+      'Znam w stopniu podstawowym kilka języków programowania: JavaScript, Java, PHP. Dodatkowo, mam doświadczenie z pracy z różnymi narzędziami, frameworkami i biliotekami takimi jak React, GIT, Firebase, Trelo, Asana.',
   },
   {
-    question: 'Curabitur laoreet metus?',
+    question: 'Czy jestem otwarty na nowe technologie i jak szybko się uczę?',
     answer:
-      'Curabitur laoreet metus eu libero semper, at semper orci fringilla. Vivamus sit amet tincidunt nunc. Pellentesque volutpat, felis et suscipit sollicitudin, nunc turpis tempor neque, ut convallis ligula arcu ac urna.',
+      'Tak, zawsze jestem otwarty na naukę nowych technologii i staram się być na bieżąco z najnowszymi trendami i narzędziami w branży IT. Uważam, że moja zdolność do szybkiego przyswajania nowych umiejętności jest jednym z moich atutów.',
   },
   {
-    question: 'Nullam non ullamcorper magna?',
+    question: 'Jakie są moje doświadczenia w zarządzaniu projektami?',
     answer:
-      'Nullam non ullamcorper magna. Quisque porttitor semper massa, at tincidunt ligula ullamcorper id. Ut id sem et urna laoreet tincidunt. Sed vestibulum, lectus in volutpat bibendum, nisl libero iaculis dui, ut fermentum ligula erat a justo.',
+      'Posiadam duże doświadczenie w przygotowywaniu i zarządzaniu projektami IT zarówno jako pomysłodawca, lider jak i członek zespołu. Potrafię planować i priorytetyzować zadania, zarządzać czasem, monitorować postęp i dostosowywać plany. Używam różnych narzędzi do zarządzania projektami, takich jak Trello czy Asana.',
+  },
+  {
+    question: 'W jaki sposób dbam o rozwój swoich umiejętności?',
+    answer:
+      'Dbam o rozwój swoich umiejętności przez regularne uczestnictwo w kursach stacjonarnych i online. Pracuję również nad własnymi projektami aby zdobywać doświadczenie i poznawać nowe technologie.',
+  },
+  {
+    question:
+      'Jakie są moje doświadczenia z pracą w zespole i korzystaniem z systemów kontroli wersji?',
+    answer:
+      'Pracowałem w zespołach o różnych wielkościach i strukturach. Potrafię zarządzać ludźmi, efektywnie komunikować się z innymi członkami zespołu i współpracować nad wspólnymi celami. Mam też doświadczenie w korzystaniu z systemów kontroli wersji, takich jak Git.',
   },
 ];
 
