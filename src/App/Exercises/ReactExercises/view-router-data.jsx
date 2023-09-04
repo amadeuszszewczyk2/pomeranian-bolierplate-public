@@ -12,6 +12,7 @@ import { FormsMetaData } from './Forms/router-data';
 import { Forms2MetaData } from './Forms2/router-data';
 import { MoonPhaseMetaData } from './MoonPhase/router-data';
 import { PlanetsMetaData } from './Planets/router-data';
+import { ReduxMetaData } from './Redux/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -23,6 +24,7 @@ export const blockRouterMetaData = [
   UseRefMetaData,
   FormsMetaData,
   Forms2MetaData,
+  ReduxMetaData,
   BTCMetaData,
   MoonPhaseMetaData,
   PlanetsMetaData,
