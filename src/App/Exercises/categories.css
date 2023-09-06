@@ -1,4 +1,32 @@
-.exercises-categories > * {
-  display: block;
-  border: 20px;
+.exercises-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px; /* Szerokość kafelka */
+  height: 150px; /* Wysokość kafelka */
+  border: 2px solid #000; /* Ramka dookoła kafelka */
+  padding: 10px;
+  text-decoration: none;
+  color: black; /* Kolor tekstu */
+  transition: background-color 0.3s;
+}
+
+.category-tile:hover {
+  background-color: #f5f5f5; /* Kolor tła podczas najechania */
+}
+
+.exercises-categories img {
+  width: 40px; /* Szerokość ikony */
+  height: 40px; /* Wysokość ikony */
+  margin-right: 10px; /* Odległość między ikoną a tekstem */
+}
+
+.exercises-categories .active {
+  background-color: #e0e0e0; /* Jasnyszary kolor dla aktywnego kafelka */
 }
