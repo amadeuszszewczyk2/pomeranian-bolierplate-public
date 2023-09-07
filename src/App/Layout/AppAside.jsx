@@ -1,12 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import './styles/aside.css';
-
 import { HouseIcon } from '../Components/Icons/HouseIcon';
 import { PersonalCardIcon } from '../Components/Icons/PersonalCardIcon';
-import { ElementIcon } from '../Components/Icons/ElementIcon';
 import { EditIcon } from '../Components/Icons/EditIcon';
 import { CalendarIcon } from '../Components/Icons/CalendarIcon';
-import { SettingIcon } from '../Components/Icons/SettingIcon';
 import BlogIcon from '../Components/Icons/BlogIcon.svg';
 import FaqIcon from '../Components/Icons/FaqIcon.svg';
 
@@ -27,11 +24,6 @@ export function AppAside() {
               My CV
             </NavLink>
           </li>
-
-          {/* <li>
-            <NavLink className="aside-row" to="blocks"><ElementIcon className="menu-icon"/>Blocks</NavLink>
-          </li> */}
-
           <li>
             <NavLink className="aside-row" to="exercises">
               <EditIcon className="menu-icon" />
@@ -44,7 +36,6 @@ export function AppAside() {
               Calendar
             </NavLink>
           </li>
-
           <li>
             <NavLink className="aside-row" to="blog">
               <img
@@ -56,7 +47,6 @@ export function AppAside() {
               Blog
             </NavLink>
           </li>
-
           <li>
             <NavLink className="aside-row" to="faq">
               <img
@@ -68,17 +58,7 @@ export function AppAside() {
               FAQ
             </NavLink>
           </li>
-
-          <li>
-            {/* <NavLink
-              style={{ marginTop: '40px' }}
-              className="aside-row"
-              to="settings"
-            >
-              <SettingIcon className="menu-icon" />
-              Settings
-            </NavLink> */}
-          </li>
+          <li></li>
         </ul>
       </nav>
     </aside>

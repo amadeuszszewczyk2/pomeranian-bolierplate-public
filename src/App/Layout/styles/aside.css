@@ -8,7 +8,6 @@ aside {
 }
 
 aside ul {
-  /* Nadpisanie domyślnych styli przeglądarki */
   padding-inline-start: 1rem;
   list-style-type: none;
   padding-left: 0;
@@ -34,7 +33,12 @@ aside a.active {
   color: var(--color-black);
 }
 
-
 .menu-icon {
-    margin: 4px;
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  aside {
+    display: none; /* This hides the sidebar on mobile. */
   }
+}

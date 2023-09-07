@@ -76,3 +76,36 @@ header.header-title {
 .logout:hover {
   background-color: #666666;
 }
+
+@media (max-width: 768px) {
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .profilowe {
+    width: 40px; /* Adjusting the profile picture size */
+    height: 40px;
+  }
+
+  .logout {
+    padding: 5px 10px; /* Making the logout button smaller */
+  }
+}
+
+@media (max-width: 768px) {
+  .headerlogo img {
+    /* Assuming the Logo component renders an img tag */
+    width: 80%; /* or whatever reduced size you prefer */
+    height: auto; /* To maintain the aspect ratio */
+  }
+}
+
+@media (max-width: 768px) {
+  .profilowe,
+  .user-name,
+  .user-position {
+    /* This hides the profile picture, user name, and position */
+    display: none;
+  }
+}
