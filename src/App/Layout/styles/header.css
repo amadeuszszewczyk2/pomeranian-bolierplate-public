@@ -24,6 +24,16 @@ header.header-title {
   margin-top: 15px;
 }
 
+.menu-icon-link {
+  display: none; /* Initially hidden */
+}
+
+.menu-icon-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 15px; /* Adjust the margin if needed */
+}
+
 .profilowe {
   width: 60px;
   height: 60px;
@@ -59,10 +69,6 @@ header.header-title {
   font-size: 14px;
   font-weight: 100;
 }
-.arrow-btn {
-  border: none;
-  background-color: transparent;
-}
 
 .logout {
   background-color: #23213d;
@@ -77,35 +83,66 @@ header.header-title {
   background-color: #666666;
 }
 
+.mobile-logo {
+  width: 80px;
+  height: auto;
+  display: none; /* Initially hidden on larger screens */
+}
+
 @media (max-width: 768px) {
   header {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .profilowe {
-    width: 40px; /* Adjusting the profile picture size */
+  .menu-icon-link {
+    display: block;
+  }
+
+  .headerlogo img {
+    display: none;
+  }
+
+  .mobilelogo {
+    display: block;
+    width: 40px;
     height: 40px;
+    margin-right: 5px;
+  }
+
+  .profilowe {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
   }
 
   .logout {
-    padding: 5px 10px; /* Making the logout button smaller */
-  }
-}
-
-@media (max-width: 768px) {
-  .headerlogo img {
-    /* Assuming the Logo component renders an img tag */
-    width: 80%; /* or whatever reduced size you prefer */
-    height: auto; /* To maintain the aspect ratio */
-  }
-}
-
-@media (max-width: 768px) {
-  .profilowe,
-  .user-name,
-  .user-position {
-    /* This hides the profile picture, user name, and position */
     display: none;
+  }
+
+  .user-position {
+    display: none;
+  }
+
+  .menu {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
+
+.mobile-text {
+  display: none; /* Initially hidden on larger screens */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Poppins;
+}
+
+@media (max-width: 768px) {
+  .mobile-text {
+    display: block;
   }
 }

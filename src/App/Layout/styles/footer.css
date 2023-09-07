@@ -32,15 +32,9 @@ footer a {
   text-decoration: none;
 }
 
-@media (max-width: 1000px) {
-  .hide-on-mobile {
-    display: none;
-  }
-}
-
 @media (max-width: 768px) {
   footer {
-    grid-template-columns: 1fr; /* To stack content vertically */
-    text-align: center; /* To center the text and links */
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }

@@ -39,6 +39,6 @@ aside a.active {
 
 @media (max-width: 768px) {
   aside {
-    display: none; /* This hides the sidebar on mobile. */
+    display: none;
   }
 }
