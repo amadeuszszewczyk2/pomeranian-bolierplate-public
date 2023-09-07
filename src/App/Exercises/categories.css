@@ -30,3 +30,9 @@
 .exercises-categories .active {
   background-color: #e0e0e0; /* Jasnyszary kolor dla aktywnego kafelka */
 }
+
+.category-shadow:hover {
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}

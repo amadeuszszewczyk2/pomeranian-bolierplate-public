@@ -50,7 +50,7 @@ export const CV = () => {
       </div>
       <br></br>
       <br></br>
-      <b>My tech-stack:</b>
+      <b className="img-tech-stack">My tech-stack:</b>
       <br></br>
       <br></br>
       <div className="img-tech-stack">

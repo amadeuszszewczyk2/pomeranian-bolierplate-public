@@ -2,9 +2,15 @@ import './styles.css';
 
 import React from 'react';
 
-const DashboardCard = ({ sectionTitle, description, icon, link }) => {
+const DashboardCard = ({
+  className,
+  sectionTitle,
+  description,
+  icon,
+  link,
+}) => {
   return (
-    <div className="dashboard-card">
+    <div className={`dashboard-card ${className ? className : ''}`}>
       <h3 className="card-title">{sectionTitle}</h3>
       <div className="icon-wrapper">{icon}</div>
       <p className="card-description">{description}</p>

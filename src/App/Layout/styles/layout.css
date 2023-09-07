@@ -25,6 +25,13 @@ main {
 }
 
 @media (max-width: 768px) {
+  /* You can adjust the 768px value to any other breakpoint you prefer */
+  .cookie-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
     grid-template-rows: 4rem auto 4rem; /* Adjusting the header and footer height */

@@ -1,7 +1,8 @@
+/* Base styles */
 .img-tech-stack {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Centered by default for mobile */
 }
 
 .row {
@@ -9,9 +10,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
-  /* Even spacing between rows */
   margin-bottom: 0px;
-  margin-left: -40px;
+  margin-left: 0; /* setting to 0 for proper alignment on mobile */
 }
 
 .tech-img {
@@ -26,29 +26,47 @@
   align-items: center;
   text-align: center;
   margin: 10px;
-  flex: 1 0 calc(33.33% - 20px);
+  flex: 1 0 100%; /* Taking full width on mobile by default */
 }
 
 .tech-text {
   font-size: 12px;
 }
 
-@media (max-width: 800px) {
-  .tech-container {
-    flex: 1 0 calc(50% - 20px);
-  }
+/* By default (for larger screens), the text is left-aligned */
+.tech-stack-header {
+  text-align: left;
 }
 
-@media (max-width: 500px) {
+/* Tablet and larger mobile devices */
+@media (min-width: 501px) and (max-width: 800px) {
   .tech-container {
-    flex: 1 0 100%;
+    flex: 1 0 calc(50% - 20px); /* Taking half the width on tablets */
   }
 
   .tech-text {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+
+/* Desktop and larger tablets */
+@media (min-width: 801px) {
+  .tech-container {
+    flex: 1 0 calc(33.33% - 20px); /* Taking one-third of the width on desktop */
   }
 
   .img-tech-stack {
-    align-items: center;
+    align-items: flex-start; /* Resetting alignment for larger screens */
+  }
+
+  .row {
+    margin-left: -40px; /* Resetting the margin for larger screens */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 500px) {
+  .tech-stack-header {
+    text-align: center;
   }
 }

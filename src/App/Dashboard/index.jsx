@@ -56,6 +56,7 @@ export const Dashboard = () => {
         {availableCards.map((card) => {
           return (
             <DashboardCard
+              className="card-shadow"
               sectionTitle={card.sectionTitle}
               description={card.description}
               link={card.link}

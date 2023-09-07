@@ -13,17 +13,25 @@ export const Categories = () => {
       <div className="exercises-categories">
         <NavLink
           to="html-css"
-          className="category-tile"
+          className="category-tile category-shadow"
           activeClassName="active"
         >
           <img src={htmlIcon} alt="HTML icon" />
           HTML & CSS
         </NavLink>
-        <NavLink to="js" className="category-tile" activeClassName="active">
+        <NavLink
+          to="js"
+          className="category-tile category-shadow"
+          activeClassName="active"
+        >
           <img src={jsIcon} alt="JavaScript icon" />
           Java Script
         </NavLink>
-        <NavLink to="react" className="category-tile" activeClassName="active">
+        <NavLink
+          to="react"
+          className="category-tile category-shadow"
+          activeClassName="active"
+        >
           <img src={reactIcon} alt="React icon" />
           React
         </NavLink>
