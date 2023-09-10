@@ -42,6 +42,7 @@ import { Try9MetaData } from './Try9/router-data';
 import { PropsMetaData } from './Props/router-data';
 import { TypeScriptMetaData } from './TypeScript/router-data';
 import { TestingMetaData } from './Testing/router-data';
+import { FootballMetaData } from './Football/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -86,6 +87,7 @@ export const blockRouterMetaData = [
   HitTheMoleGameMetaData,
   MemoGameMetaData,
   NoughtsAndCrossesMetaData,
+  FootballMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);

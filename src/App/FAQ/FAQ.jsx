@@ -5,30 +5,30 @@ import { faPlusSquare, faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 
 const faqData = [
   {
-    question: 'Jakie języki programowania i technologie znam?',
+    question: 'What programming languages and technologies do I know?',
     answer:
-      'Znam w stopniu podstawowym kilka języków programowania: JavaScript, Java, PHP. Dodatkowo, mam doświadczenie z pracy z różnymi narzędziami, frameworkami i biliotekami takimi jak React, GIT, Firebase, Trelo, Asana.',
+      'I have a basic knowledge of several programming languages: JavaScript, Java, PHP. Additionally, I have experience working with various tools, frameworks, and libraries such as React, GIT, Firebase, Trello, Asana.',
   },
   {
-    question: 'Czy jestem otwarty na nowe technologie i jak szybko się uczę?',
+    question: 'Am I open to new technologies and how quickly do I learn?',
     answer:
-      'Tak, zawsze jestem otwarty na naukę nowych technologii i staram się być na bieżąco z najnowszymi trendami i narzędziami w branży IT. Uważam, że moja zdolność do szybkiego przyswajania nowych umiejętności jest jednym z moich atutów.',
+      "Yes, I'm always open to learning new technologies and try to stay up-to-date with the latest trends and tools in the IT industry. I believe that my ability to quickly acquire new skills is one of my strengths.",
   },
   {
-    question: 'Jakie są moje doświadczenia w zarządzaniu projektami?',
+    question: 'What are my experiences in project management?',
     answer:
-      'Posiadam duże doświadczenie w przygotowywaniu i zarządzaniu projektami IT zarówno jako pomysłodawca, lider jak i członek zespołu. Potrafię planować i priorytetyzować zadania, zarządzać czasem, monitorować postęp i dostosowywać plany. Używam różnych narzędzi do zarządzania projektami, takich jak Trello czy Asana.',
+      'I have extensive experience in preparing and managing IT projects both as an initiator, leader, and team member. I can plan and prioritize tasks, manage time, monitor progress, and adjust plans. I use various project management tools such as Trello and Asana.',
   },
   {
-    question: 'W jaki sposób dbam o rozwój swoich umiejętności?',
+    question: 'How do I take care of the development of my skills?',
     answer:
-      'Dbam o rozwój swoich umiejętności przez regularne uczestnictwo w kursach stacjonarnych i online. Pracuję również nad własnymi projektami aby zdobywać doświadczenie i poznawać nowe technologie.',
+      'I take care of the development of my skills by regularly participating in onsite and online courses. I also work on my projects to gain experience and learn about new technologies.',
   },
   {
     question:
-      'Jakie są moje doświadczenia z pracą w zespole i korzystaniem z systemów kontroli wersji?',
+      'What is my experience with team collaboration and using version control systems?',
     answer:
-      'Pracowałem w zespołach o różnych wielkościach i strukturach. Potrafię zarządzać ludźmi, efektywnie komunikować się z innymi członkami zespołu i współpracować nad wspólnymi celami. Mam też doświadczenie w korzystaniu z systemów kontroli wersji, takich jak Git.',
+      'I have worked in teams of various sizes and structures. I can manage people, effectively communicate with other team members, and collaborate towards common goals. I also have experience using version control systems, such as Git.',
   },
 ];
 
@@ -38,7 +38,9 @@ export function FAQ() {
   return (
     <div className="faq-main-container">
       <h1>FAQ</h1>
-      <h5>Tutaj znajdziesz odpowiedzi na najczęściej zadawane pytania</h5>
+      <h5>
+        Here you will find answers to the most frequently asked questions.
+      </h5>
       <div className="border-box">
         {faqData.map((item, index) => (
           <div key={index} className="faq-item">
