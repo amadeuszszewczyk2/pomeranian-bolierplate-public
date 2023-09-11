@@ -27,6 +27,14 @@ export function Exercise123() {
       >
         Visit my website "Corporate"
       </a>
+      <p></p>
+      <a
+        href="https://aszewczykportfolio.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit my Portfolio
+      </a>
     </div>
   );
 }
