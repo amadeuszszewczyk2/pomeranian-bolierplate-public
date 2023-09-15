@@ -9,7 +9,7 @@ import { MaterialUIBasicElements2MetaData } from './MaterialUIBasicElements2/rou
 import { MaterialUIBasicElements3MetaData } from './MaterialUIBasicElements3/router-data';
 import { UseRefMetaData } from './UseRef/router-data';
 import { FormsMetaData } from './Forms/router-data';
-import { Forms2MetaData } from './Forms2/router-data';
+// import { Forms2MetaData } from './Forms2/router-data';
 import { MoonPhaseMetaData } from './MoonPhase/router-data';
 import { PlanetsMetaData } from './Planets/router-data';
 import { ReduxMetaData } from './Redux/router-data';
@@ -23,7 +23,7 @@ export const blockRouterMetaData = [
   MaterialUIBasicElements3MetaData,
   UseRefMetaData,
   FormsMetaData,
-  Forms2MetaData,
+  // Forms2MetaData,
   ReduxMetaData,
   BTCMetaData,
   MoonPhaseMetaData,

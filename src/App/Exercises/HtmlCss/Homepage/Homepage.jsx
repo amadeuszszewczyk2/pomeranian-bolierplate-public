@@ -33,7 +33,7 @@ export function Exercise123() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Visit my Portfolio
+        Visit my website "Portfolio"
       </a>
     </div>
   );

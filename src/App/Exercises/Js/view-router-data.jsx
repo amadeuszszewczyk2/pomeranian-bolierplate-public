@@ -43,6 +43,10 @@ import { PropsMetaData } from './Props/router-data';
 import { TypeScriptMetaData } from './TypeScript/router-data';
 import { TestingMetaData } from './Testing/router-data';
 import { FootballMetaData } from './Football/router-data';
+import { DiagramsMetaData } from './Diagrams/router-data';
+import { BotMetaData } from './Bot/router-data';
+import { BlockchainMetaData } from './Blockchain/router-data';
+import { MachineLearningMetaData } from './MachineLearning/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -78,12 +82,16 @@ export const blockRouterMetaData = [
   PrototypeMetaData,
   TypeScriptMetaData,
   TestingMetaData,
+  DiagramsMetaData,
   IFMetaData,
   TryMetaData,
   Try9MetaData,
   Try7MetaData,
   ProjectLibraryMetaData,
   FetchMetaData,
+  BotMetaData,
+  BlockchainMetaData,
+  MachineLearningMetaData,
   HitTheMoleGameMetaData,
   MemoGameMetaData,
   NoughtsAndCrossesMetaData,

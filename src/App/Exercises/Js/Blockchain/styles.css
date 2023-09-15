@@ -1,0 +1,88 @@
+/* styles.css */
+
+.blockchain {
+  font-family: 'Verdana', sans-serif;
+  background-color: #333542;
+  color: #f3f3f3;
+  padding: 15px;
+  transform: scale(0.75);
+  transform-origin: center;
+  margin-top: -50px;
+}
+
+.blockchain__block {
+  border: 1px solid #4f5363;
+  padding: 10px;
+  margin: 15px 0;
+  background-color: #2e3039;
+  border-radius: 6px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blockchain__block:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+}
+
+.blockchain__block-title {
+  margin-top: 0;
+  border-bottom: 1px dashed #4f5363;
+  padding-bottom: 8px;
+}
+
+.blockchain__input-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockchain__input:focus {
+  border-color: #7890a7;
+  box-shadow: 0 0 10px rgba(120, 144, 167, 0.24);
+  outline: none;
+}
+
+.blockchain__btn {
+  padding: 8px 12px;
+  background-color: #7890a7;
+  color: #111317;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.blockchain__btn:hover {
+  background-color: #8aa1b8;
+}
+
+.blockchain__btn:active {
+  background-color: #5f768e;
+  border: 1px solid #8aa1b8;
+}
+
+.blockchain__image {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.blockchain__input::placeholder {
+  font-size: 18px; /* Adjust this value according to your preference */
+  opacity: 0.7; /* It's good practice to decrease opacity for placeholders */
+}
+
+.blockchain__input {
+  margin-right: 10px;
+  padding: 10px 12px; /* Increase padding */
+  border-radius: 6px;
+  border: 1px solid #4f5363;
+  background-color: #2e3039;
+  color: #f3f3f3;
+  flex-grow: 1;
+  font-size: 18px; /* Increase font size of input */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 40px; /* Adjust this value for desired input height */
+}
