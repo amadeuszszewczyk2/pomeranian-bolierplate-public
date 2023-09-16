@@ -3,7 +3,7 @@ import { MachineLearning } from './MachineLearning';
 export const MachineLearningMetaData = {
   path: 'MachineLearning',
   date: '15.09.2023',
-  linkLabel: 'Project: Machine Learning',
+  linkLabel: 'Project: Machine Learning - Real Estate',
   blockNo: 6,
   element: <MachineLearning />,
   tags: ['array', 'map', 'filter', 'flex'],
