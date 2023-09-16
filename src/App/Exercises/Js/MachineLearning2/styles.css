@@ -1,0 +1,36 @@
+/* BEM styles for our FootballPredictor app */
+.FootballPredictor {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.FootballPredictor__title {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.FootballPredictor__button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #009966; /* Football grass green */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.FootballPredictor__history,
+.FootballPredictor__predictions {
+  margin-bottom: 20px;
+}
+
+.FootballPredictor__loading {
+  color: #666;
+  font-style: italic;
+}
