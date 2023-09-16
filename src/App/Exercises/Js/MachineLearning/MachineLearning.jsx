@@ -34,6 +34,7 @@ export function MachineLearning() {
   const [year, setYear] = useState('');
   const [status, setStatus] = useState('');
   const [model, setModel] = useState(null);
+  const [modelTrained, setModelTrained] = useState(false);
 
   useEffect(() => {
     const m = tf.sequential();
@@ -87,6 +88,7 @@ export function MachineLearning() {
 
     setStatus('Model został wytrenowany!');
     setLoading(false);
+    setModelTrained(true);
   };
 
   const predictPrice = () => {
@@ -145,6 +147,8 @@ export function MachineLearning() {
 
   return (
     <>
+      {loading && <div className="predictor-loading-spinner"></div>}
+
       <div className="predictor">
         <h1>Prognozowanie średnich cen mieszkań w Gdańsku na 2024 rok</h1>
         {status && (
@@ -178,6 +182,11 @@ export function MachineLearning() {
         />
         <button onClick={addData}>Dodaj dane</button>
         <button onClick={trainModel}>Trenuj model</button>
+        {!modelTrained && (
+          <p style={{ color: 'red' }}>
+            Musisz najpierw wytrenować model, aby użyć przycisku prognozowania.
+          </p>
+        )}
 
         <h2>Prognozuj cenę na 2024 rok:</h2>
         <input
@@ -185,7 +194,9 @@ export function MachineLearning() {
           onChange={(e) => setUserArea(e.target.value)}
           placeholder="Powierzchnia w m²"
         />
-        <button onClick={predictPrice}>Prognozuj cenę</button>
+        <button onClick={predictPrice} disabled={!modelTrained}>
+          Prognozuj cenę
+        </button>
 
         {predictedPrice && (
           <p>
