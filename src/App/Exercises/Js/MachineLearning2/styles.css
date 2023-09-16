@@ -34,3 +34,7 @@
   color: #666;
   font-style: italic;
 }
+
+.FootballPredictor__prediction--green {
+  color: green;
+}

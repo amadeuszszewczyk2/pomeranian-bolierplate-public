@@ -100,13 +100,16 @@ export function MachineLearning2() {
         <ul>
           {upcomingMatches.map((match) => (
             <li key={match.date + match.opponent}>
-              {match.date} | {match.home ? 'Lechia Gdańsk' : match.opponent} vs.{' '}
+              {match.date} | {match.home ? 'Lechia Gdańsk' : match.opponent} vs.
               {match.home ? match.opponent : 'Lechia Gdańsk'} | Prognozowane
-              wyniki:{' '}
-              {predictedResults.length > 0 &&
-                predictedResults.find(
-                  (m) => m.date === match.date && m.opponent === match.opponent
-                )?.result}
+              wyniki:
+              <span className="FootballPredictor__prediction--green">
+                {predictedResults.length > 0 &&
+                  predictedResults.find(
+                    (m) =>
+                      m.date === match.date && m.opponent === match.opponent
+                  )?.result}
+              </span>
             </li>
           ))}
         </ul>
