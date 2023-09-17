@@ -48,6 +48,8 @@ import { BotMetaData } from './Bot/router-data';
 import { BlockchainMetaData } from './Blockchain/router-data';
 import { MachineLearningMetaData } from './MachineLearning/router-data';
 import { MachineLearning2MetaData } from './MachineLearning2/router-data';
+import { Blockchain2MetaData } from './Blockchain2/router-data';
+import { Blockchain3MetaData } from './Blockchain3/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -92,6 +94,8 @@ export const blockRouterMetaData = [
   FetchMetaData,
   BotMetaData,
   BlockchainMetaData,
+  Blockchain2MetaData,
+  Blockchain3MetaData,
   MachineLearningMetaData,
   MachineLearning2MetaData,
   HitTheMoleGameMetaData,

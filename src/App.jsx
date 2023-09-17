@@ -9,6 +9,7 @@ import { Exercises } from './App/Exercises';
 import { Calendar } from './App/Calendar/Calendar';
 import { Blog } from './App/Blog/Blog';
 import { FAQ } from './App/FAQ/FAQ';
+import { Widgets } from './App/Widgets/Widgets';
 import { Settings } from './App/Settings/Settings';
 import { Login } from './Login';
 
@@ -26,6 +27,7 @@ export function App() {
           <Route path="calendar/*" element={<Calendar />} />
           <Route path="blog/*" element={<Blog />} />
           <Route path="FAQ/*" element={<FAQ />} />
+          <Route path="Widgets/*" element={<Widgets />} />
           <Route path="settings/*" element={<Settings />} />
           <Route path="*" element={<NotFound />} />
         </Route>

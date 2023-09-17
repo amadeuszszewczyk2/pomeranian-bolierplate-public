@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import SHA256 from 'crypto-js/sha256';
 import blockchainImage from './blockchain.png';
@@ -10,6 +10,10 @@ export function Blockchain() {
   const [data, setData] = useState('');
   const [blocks, setBlocks] = useState(initialBlocks);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem('blocks', JSON.stringify(blocks));
+  }, [blocks]);
 
   const calculateHash = (data, prevHash) => {
     return SHA256(data + prevHash).toString();
@@ -34,9 +38,7 @@ export function Blockchain() {
       blocks.length === 0 ||
       isValidNewBlock(newBlock, blocks[blocks.length - 1])
     ) {
-      const newBlocks = [...blocks, newBlock];
-      setBlocks(newBlocks);
-      localStorage.setItem('blocks', JSON.stringify(newBlocks));
+      setBlocks((prevBlocks) => [...prevBlocks, newBlock]);
       setData('');
       setError(null);
     } else {
