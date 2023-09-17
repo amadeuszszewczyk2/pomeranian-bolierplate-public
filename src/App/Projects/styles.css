@@ -84,3 +84,9 @@
 .switch-tile:hover {
   transform: scale(1.05);
 }
+
+.projects__list li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8; /* dodane tło dla lepszego efektu */
+}

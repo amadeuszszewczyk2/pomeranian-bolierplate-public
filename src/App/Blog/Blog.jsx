@@ -3,7 +3,6 @@ import './styles.css';
 export const Blog = () => {
   return (
     <div>
-      {/* First Blog Entry */}
       <div className="blog-container">
         <div className="blog-date">01-07-2023</div>
 
@@ -29,12 +28,10 @@ export const Blog = () => {
         </div>
 
         <div className="blog-author">
-          <p className="blog-author-name">Jan Kowalski</p>
-          <p className="blog-author-role">AI Specialist</p>
+          <p className="blog-author-name">Amadeusz Szewczyk</p>
+          <p className="blog-author-role">Frontend Developer</p>
         </div>
       </div>
-
-      {/* Second Blog Entry */}
       <div className="blog-container">
         <div className="blog-date">19-07-2023</div>
 
@@ -60,8 +57,8 @@ export const Blog = () => {
         </div>
 
         <div className="blog-author">
-          <p className="blog-author-name">Emily Johnson</p>
-          <p className="blog-author-role">AI Researcher</p>
+          <p className="blog-author-name">Amadeusz Szewczyk</p>
+          <p className="blog-author-role">Frontend Developer</p>
         </div>
       </div>
     </div>

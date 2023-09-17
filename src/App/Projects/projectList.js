@@ -87,7 +87,7 @@ const projectList = [
     path: '/exercises/react/BTC',
     name: 'BTC',
     description: 'Bitcoin valuation based on data from Coingecko.',
-    tags: ['#react', '#fetch', '#cryptocurrency'],
+    tags: ['#react', '#fetch', '#crypto'],
   },
   {
     path: '/exercises/react/MoonPhase',
