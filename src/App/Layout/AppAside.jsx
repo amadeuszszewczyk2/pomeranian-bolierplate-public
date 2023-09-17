@@ -6,6 +6,7 @@ import { EditIcon } from '../Components/Icons/EditIcon';
 import { CalendarIcon } from '../Components/Icons/CalendarIcon';
 import BlogIcon from '../Components/Icons/BlogIcon.svg';
 import FaqIcon from '../Components/Icons/FaqIcon.svg';
+import ArrowsIcon from '../Components/Icons/ArrowsIcon.svg';
 
 export function AppAside() {
   return (
@@ -22,6 +23,17 @@ export function AppAside() {
             <NavLink className="aside-row" to="CV">
               <PersonalCardIcon className="menu-icon" />
               My CV
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="aside-row" to="projects">
+              <img
+                src={ArrowsIcon}
+                className="menu-icon"
+                alt="Projects"
+                style={{ width: '23px', height: '23px' }}
+              />
+              Projects
             </NavLink>
           </li>
           <li>

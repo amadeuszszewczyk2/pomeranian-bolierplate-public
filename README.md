@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 🚀 Pomeranian StartIT Projects
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The portfolio includes projects based on HTML5, CSS3, JavaScript, TypeScript, React, Redux, JSON, REST API, as well as fundamentals of blockchain and machine learning.
 
-## Available Scripts
+The portfolio was created using React and is continuously being developed.
 
-In the project directory, you can run:
+A collection of web development projects hosted at [Pomeranian StartIT](https://pomeranianstartit.vercel.app).
 
-### `npm start`
+## 📚 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Signup](https://pomeranianstartit.vercel.app/exercises/html-css/Signup) - A basic signup page using HTML and CSS.
+- [Websites](https://pomeranianstartit.vercel.app/exercises/html-css/Homepage) - My collection of sample websites.
+- [Library Catalogue](https://pomeranianstartit.vercel.app/exercises/js/ProjectLibrary) - Catalog with books.
+- [Pokemon Cards](https://pomeranianstartit.vercel.app/exercises/js/Fetch) - Demonstrates the use of the Fetch API.
+- [Bot](https://pomeranianstartit.vercel.app/exercises/js/Bot) - A basic bot application developed in JavaScript.
+- [Blockchain](https://pomeranianstartit.vercel.app/exercises/js/Blockchain) - An introduction to the fundamental concepts of blockchain.
+- [Voting App](https://pomeranianstartit.vercel.app/exercises/js/Blockchain2) - A voting application built on blockchain technology.
+- [NFT](https://pomeranianstartit.vercel.app/exercises/js/Blockchain3) - A basic NFT project based on blockchain technology.
+- [Real Estate](https://pomeranianstartit.vercel.app/exercises/js/MachineLearning) - Property price forecasting using machine learning.
+- [Football (Match Prediction)](https://pomeranianstartit.vercel.app/exercises/js/MachineLearning2) - Predicting match outcomes using machine learning techniques.
+- [Hit The Mole Game](https://pomeranianstartit.vercel.app/exercises/js/HitTheMoleGame) - A delightful hit-the-mole game developed in JavaScript.
+- [Memo Game](https://pomeranianstartit.vercel.app/exercises/js/MemoGame) - A memory card matching game.
+- [Noughts And Crosses](https://pomeranianstartit.vercel.app/exercises/js/NoughtsAndCrosses) - The classic Tic Tac Toe game implemented in JavaScript.
+- [Football (Game)](https://pomeranianstartit.vercel.app/exercises/js/football) - A game for predicting football match outcomes.
+- [BTC](https://pomeranianstartit.vercel.app/exercises/react/BTC) - Bitcoin valuation based on data from Coingecko.
+- [Moon Phase](https://pomeranianstartit.vercel.app/exercises/react/MoonPhase) - Displays the moon phases for selected dates.
+- [Planets](https://pomeranianstartit.vercel.app/exercises/react/Planets) - An educational project about the solar system.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔧 Setup
 
-### `npm test`
+https://pomeranianstartit.vercel.app/dashboard
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project, install it locally using npm:
 
-### `npm run build`
+$ npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Certainly! Based on the descriptions of the projects you provided, I've derived a list of features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📝 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Signup & Registration**: Designs that facilitate user onboarding, as demonstrated in the "Signup" project.
+- **Website Collections**: Offers a varied collection of sample websites showcasing different design and functionality concepts, like the "Websites" project.
+- **Cataloguing System**: Efficiently organizes and displays categorized items, shown in the "Library Catalogue" project.
+- **Fetch API Utilization**: Seamlessly fetches and integrates data from external sources in real-time, highlighted in the "Pokemon Cards" project.
+- **Bot Interactions**: Development and integration of bot functionalities for automated interactions, as seen in the "Bot" project.
+- **Blockchain Integration**: Educates and demonstrates the fundamental concepts of blockchain, including applications like voting systems and NFT projects.
+- **Machine Learning Predictions**: Uses advanced algorithms for predictions, demonstrated by real estate pricing and football match outcome projects.
+- **Gaming Experiences**: Creates engaging interactive gaming experiences, like the "Hit The Mole Game," "Memo Game," and "Noughts And Crosses."
+- **Cryptocurrency Valuation**: Real-time valuation and data representation of cryptocurrencies, demonstrated by the "BTC" project.
+- **Astronomical Displays**: Presents data-driven insights on celestial events like moon phases and planetary details.
 
-### `npm run eject`
+## 🤝 Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Contributions, issues, and feature requests are welcome!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚖️ License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© Amadeusz Szewczyk, 2023. If you wish to use or duplicate any material from this project, please contact the author directly for permission.

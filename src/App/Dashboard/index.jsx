@@ -5,8 +5,8 @@ import { PersonalCardIcon } from '../Components/Icons/PersonalCardIcon';
 import { EditIcon } from '../Components/Icons/EditIcon';
 import { CalendarIcon } from '../Components/Icons/CalendarIcon';
 import BlogIcon from '../Components/Icons/BlogIcon.svg';
-import FaqIcon from '../Components/Icons/FaqIcon.svg';
 import WidgetsIcon from '../Components/Icons/WidgetsIcon.svg';
+import ArrowsIcon from '../Components/Icons/ArrowsIcon.svg';
 
 export const Dashboard = () => {
   const [availableCards, setAvailableCards] = useState([
@@ -15,6 +15,12 @@ export const Dashboard = () => {
       icon: <PersonalCardIcon alt="business card resume" />,
       description: 'curriculum vitae',
       link: '/cv',
+    },
+    {
+      sectionTitle: 'Projects',
+      icon: <img src={ArrowsIcon} alt="business card resume" />,
+      description: 'my projects',
+      link: '/projects',
     },
     {
       sectionTitle: ' Exercises',
@@ -35,17 +41,9 @@ export const Dashboard = () => {
       description: 'blog about front-end technology',
       link: '/blog',
     },
-
-    {
-      sectionTitle: 'FAQ',
-      icon: <img src={FaqIcon} alt="business card resume" />,
-      description: 'questions and answers',
-      link: '/faq',
-    },
-
     {
       sectionTitle: 'Widgets',
-      icon: <img src={WidgetsIcon} alt="widgets" />,
+      icon: <img src={WidgetsIcon} alt="business card resume" />,
       description: 'Loading widgets...',
       link: '/widgets',
     },

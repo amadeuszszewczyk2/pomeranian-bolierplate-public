@@ -4,6 +4,7 @@ import { NotFound } from './App/Components/NotFound/NotFound';
 import { Layout } from './App/Layout';
 import { Dashboard } from './App/Dashboard';
 import { CV } from './App/CV/CV';
+import { Projects } from './App/Projects/Projects';
 import { Blocks } from './App/Blocks';
 import { Exercises } from './App/Exercises';
 import { Calendar } from './App/Calendar/Calendar';
@@ -22,6 +23,7 @@ export function App() {
         <Route path="" element={<Layout withSidebar />}>
           <Route path="dashboard/*" element={<Dashboard />} />
           <Route path="CV/*" element={<CV />} />
+          <Route path="projects/*" element={<Projects />} />
           <Route path="blocks/*" element={<Blocks />} />
           <Route path="exercises/*" element={<Exercises />} />
           <Route path="calendar/*" element={<Calendar />} />
