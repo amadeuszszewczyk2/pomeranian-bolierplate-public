@@ -1,6 +1,6 @@
 # 🚀 Pomeranian StartIT Projects
 
-The portfolio includes projects based on HTML5, CSS3, JavaScript, TypeScript, React, Redux, JSON, REST API, as well as fundamentals of blockchain and machine learning.
+The portfolio includes projects based on HTML5, CSS3, JavaScript, React, JSON, REST API, as well as fundamentals of blockchain and machine learning.
 
 The portfolio was created using React and is continuously being developed.
 
