@@ -13,6 +13,7 @@ import { FormsMetaData } from './Forms/router-data';
 import { MoonPhaseMetaData } from './MoonPhase/router-data';
 import { PlanetsMetaData } from './Planets/router-data';
 import { ReduxMetaData } from './Redux/router-data';
+import { BTC3MetaData } from './BTC3/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -26,6 +27,7 @@ export const blockRouterMetaData = [
   // Forms2MetaData,
   ReduxMetaData,
   BTCMetaData,
+  BTC3MetaData,
   MoonPhaseMetaData,
   PlanetsMetaData,
 ];
