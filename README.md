@@ -30,11 +30,7 @@ A collection of web development projects hosted at [Pomeranian StartIT](https://
 
 https://pomeranianstartit.vercel.app/dashboard
 
-To run this project, install it locally using npm:
-
-$ npm start
-
-Certainly! Based on the descriptions of the projects you provided, I've derived a list of features:
+To run this project, install it locally using npm.
 
 ## 📝 Features
 
