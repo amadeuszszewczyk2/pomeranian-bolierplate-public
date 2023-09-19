@@ -106,7 +106,7 @@ export function GamePlatform() {
       setAsteroids((prevAsteroids) =>
         prevAsteroids.filter((ast) => {
           if (ast.y < 0) {
-            setScore((prevScore) => prevScore + 1);
+            setScore((prevScore) => prevScore + 0.5);
             return false;
           }
           if (
@@ -133,7 +133,7 @@ export function GamePlatform() {
       clearInterval(spawnInterval);
       clearInterval(moveInterval);
     };
-  }, [gameRunning, speed, playerPos]);
+  }, [gameRunning, speed]);
 
   const startGame = () => {
     if (isSoundOn) {
@@ -151,18 +151,18 @@ export function GamePlatform() {
 
   return (
     <div className="game-container">
-      <audio ref={audioRef} loop>
+      <audio ref={audioRef}>
         <source src={spaceSound} type="audio/mp3" />
       </audio>
-      <audio ref={audioFailRef} preload="auto">
+      <audio ref={audioFailRef}>
         <source src={failSound} type="audio/mp3" />
       </audio>
-      <audio ref={audioStartRef} preload="auto">
+      <audio ref={audioStartRef}>
         <source src={startSound} type="audio/mp3" />
       </audio>
-      <button onClick={toggleSound}>
+      {/*<button onClick={toggleSound}>
         {isSoundOn ? 'Turn Off Sound' : 'Turn On Sound'}
-      </button>
+  </button>*/}
       <div className="game-platform">
         <div
           className="game-platform__player"

@@ -1,9 +1,9 @@
 import { GamePlatform } from './GamePlatform';
 
 export const GamePlatformMetaData = {
-  path: 'GamePlatform',
+  path: 'GameSpace',
   date: '19.09.2023',
-  linkLabel: 'GamePlatform',
+  linkLabel: 'Game: Space',
   blockNo: 1,
   element: <GamePlatform />,
   tags: ['components', 'import', 'export'],
