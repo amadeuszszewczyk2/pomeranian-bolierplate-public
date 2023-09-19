@@ -1,12 +1,15 @@
 .dashboard-card {
+  display: block;
+  text-decoration: none;
   border: 1px solid #000;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   background-color: #000000;
   background-image: linear-gradient(white, #ffffff);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: cardHover 1.3s ease forwards;
   transition: transform 0.3s ease;
+  color: #383838; /* Zmieniono kolor tekstu na czarny */
 }
 
 .dashboard-card:hover {
@@ -29,24 +32,32 @@
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 8px;
-  color: #fff;
+  color: #383838; /* Zmieniono kolor tytułu na czarny */
   text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-card-description {
   font-size: 14px;
-  color: #666;
+  color: #383838; /* Zmieniono kolor opisu na czarny */
   margin-bottom: 10px;
 }
 
-.dashboard-card-link {
+.dashboard-card-link,
+.dashboard-card-link:visited {
+  /* Dodano selektor odwiedzonego linku */
   font-size: 14px;
-  color: #007bff;
+  color: #383838; /* Zmieniono kolor linku na czarny */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.dashboard-card-link:hover {
-  color: #0056b3;
+.dashboard-card:hover .card-link {
+  text-decoration: underline;
+}
+
+.dashboard-card:hover .card-link,
+.dashboard-card:hover .card-link:visited {
+  /* Dodano selektor odwiedzonego linku */
+  color: #383838; /* Zmieniono kolor linku na czarny podczas najechania kursorem */
 }

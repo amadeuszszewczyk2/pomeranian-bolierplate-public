@@ -20,7 +20,7 @@ export const CV = () => {
     <div>
       <div className="img-tech-stack">
         <b>My LinkedIn:</b>
-        <div className="tech-container">
+        <div className="tech-container clickable">
           <br></br>
           <a
             href="https://www.linkedin.com/in/amadeusz-szewczyk/"
@@ -36,7 +36,7 @@ export const CV = () => {
       <br></br>
       <div className="img-tech-stack">
         <b>My GitHub:</b>
-        <div className="tech-container">
+        <div className="tech-container clickable">
           <br></br>
           <a
             href="https://github.com/amadeuszszewczyk2"
@@ -50,7 +50,7 @@ export const CV = () => {
       </div>
       <br></br>
       <br></br>
-      <b className="img-tech-stack">My tech-stack:</b>
+      <b className="img-tech-stack">Tech-stack:</b>
       <br></br>
       <br></br>
       <div className="img-tech-stack">

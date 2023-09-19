@@ -70,3 +70,18 @@
     text-align: center;
   }
 }
+
+.clickable {
+  cursor: pointer; /* Change the cursor to a hand pointer to indicate it's clickable */
+  transition: background-color 0.3s, transform 0.3s; /* Add smooth transition for hover effects */
+}
+
+.clickable:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.05
+  ); /* Add a subtle background color on hover */
+  transform: scale(1.1); /* Slightly enlarge the item on hover */
+}
