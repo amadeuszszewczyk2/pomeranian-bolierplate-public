@@ -1,0 +1,73 @@
+/* styles.css */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-platform {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
+  background-color: black;
+  margin-bottom: 20px;
+  background-image: url('./universe.jpg'); /* Dodane tło */
+  background-size: cover; /* Aby tło dobrze się dopasowywało */
+}
+
+.game-platform__player {
+  position: absolute;
+  width: 100px; /* możesz dostosować szerokość w zależności od wielkości obrazu ufo.png */
+  height: 100px; /* możesz dostosować wysokość w zależności od wielkości obrazu ufo.png */
+  background-image: url('./ufo.png'); /* Dodaj tło z obrazkiem ufo.png */
+  background-size: contain; /* Aby obrazek dobrze się dopasowywał */
+  background-repeat: no-repeat; /* Upewnij się, że obrazek nie powtarza się */
+}
+
+.game-platform__obstacle {
+  position: absolute;
+  width: 70px; /* możesz dostosować szerokość w zależności od wielkości obrazu kometa.png */
+  height: 70px; /* możesz dostosować wysokość w zależności od wielkości obrazu kometa.png */
+  background-image: url('./kometa.png'); /* Dodaj tło z obrazkiem kometa.png */
+  background-size: contain; /* Aby obrazek dobrze się dopasowywał */
+  background-repeat: no-repeat; /* Upewnij się, że obrazek nie powtarza się */
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Dodane dla wycentrowania przycisku względem tekstu */
+  width: 50vw;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: -20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0;
+}
+
+.game-story {
+  width: 50vw;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  margin-bottom: -20px;
+}
+
+/* Usuwam styl przycisku start w platformie gry, ponieważ teraz jest on umieszczony w sekcji game-info */
+.game-info button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s;
+  margin-bottom: -20px;
+}
+
+.game-info button:hover {
+  background-color: #ffb300;
+}

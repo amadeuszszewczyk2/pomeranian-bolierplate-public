@@ -1,5 +1,4 @@
 import { getParsedRouterDataList } from '../../router-data/parseRouterData';
-import { SubRouteExampleMetaData } from './SubRouteExample/router-data';
 import { ReactRouterEventsMetaData } from './ReactRouterEvents/router-data';
 import { Block09MetaData } from './Block09/router-data';
 import { MaterialUIBasicElementsMetaData } from './MaterialUIBasicElements/router-data';
@@ -14,6 +13,7 @@ import { MoonPhaseMetaData } from './MoonPhase/router-data';
 import { PlanetsMetaData } from './Planets/router-data';
 import { ReduxMetaData } from './Redux/router-data';
 import { BTC3MetaData } from './BTC3/router-data';
+import { GamePlatformMetaData } from './GamePlatform/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -30,6 +30,7 @@ export const blockRouterMetaData = [
   BTC3MetaData,
   MoonPhaseMetaData,
   PlanetsMetaData,
+  GamePlatformMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
