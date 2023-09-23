@@ -25,6 +25,7 @@
     "firebase": "^10.1.0",
     "font-awesome": "^4.7.0",
     "force": "^0.0.3",
+    "jspdf": "^2.5.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-calendar": "^4.6.0",

@@ -102,6 +102,12 @@ const projectList = [
     tags: ['#react', '#fetch', '#crypto'],
   },
   {
+    path: '/exercises/react/CRM',
+    name: 'CRM',
+    description: 'Simple CRM application',
+    tags: ['#react', '#js', '#business'],
+  },
+  {
     path: '/exercises/react/MoonPhase',
     name: 'Moon Phase',
     description: 'A project that displays the moon phases for selected dates.',
