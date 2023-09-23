@@ -15,6 +15,7 @@ import { ReduxMetaData } from './Redux/router-data';
 import { BTC3MetaData } from './BTC3/router-data';
 import { GamePlatformMetaData } from './GamePlatform/router-data';
 import { InvoiceMetaData } from './Invoice/router-data';
+import { CRMMetaData } from './CRM/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -29,6 +30,7 @@ export const blockRouterMetaData = [
   ReduxMetaData,
   GamePlatformMetaData,
   InvoiceMetaData,
+  CRMMetaData,
   BTCMetaData,
   BTC3MetaData,
   MoonPhaseMetaData,
