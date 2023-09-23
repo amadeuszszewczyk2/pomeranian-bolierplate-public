@@ -104,6 +104,6 @@
 
 @media screen and (max-width: 600px) {
   .login-container {
-    margin-top: 10%;
+    width: 50%; /* Zmniejsz szerokość wersji mobilnej, aby zachować dostateczny margines */
   }
 }
