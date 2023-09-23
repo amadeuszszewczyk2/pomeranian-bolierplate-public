@@ -81,14 +81,7 @@ const projectList = [
     path: '/exercises/js/football',
     name: 'Football',
     description: 'A game for predicting football match outcomes.',
-    tags: ['#js'],
-  },
-  {
-    path: '/exercises/react/GameSpace',
-    name: 'Spaceship',
-    description:
-      'A simple space-themed game where you pilot a spaceship and avoid asteroids.',
-    tags: ['#js', '#react'],
+    tags: ['#js', '#game'],
   },
   {
     path: '/exercises/react/BTC',
