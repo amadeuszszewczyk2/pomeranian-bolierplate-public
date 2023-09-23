@@ -12,6 +12,12 @@ const projectList = [
     tags: ['#html', '#css', '#wordpress'],
   },
   {
+    path: '/exercises/react/Invoice',
+    name: 'Invoice App',
+    description: 'A simple program for creating invoices.',
+    tags: ['#html', '#css', '#js', '#business'],
+  },
+  {
     path: '/exercises/js/ProjectLibrary',
     name: 'Library catalogue',
     description: 'Catalog with books',
@@ -75,6 +81,12 @@ const projectList = [
     path: '/exercises/js/NoughtsAndCrosses',
     name: 'Noughts And Crosses',
     description: 'The classic Tic Tac Toe game implemented in JavaScript.',
+    tags: ['#js', '#react', '#game'],
+  },
+  {
+    path: '/exercises/react/GameSpace',
+    name: 'Space Ship',
+    description: 'A simple game about avoiding obstacles in space.',
     tags: ['#js', '#react', '#game'],
   },
   {

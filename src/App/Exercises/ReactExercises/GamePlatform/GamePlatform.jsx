@@ -11,8 +11,6 @@ const asteroidSpeedIncrement = 0.2;
 const asteroidSpeedThreshold = 10;
 const asteroidSpawnInterval = 1500;
 const maxAsteroidsToSpawn = 5;
-// eslint-disable-next-line
-const asteroidSpeedIncreaseInterval = 20;
 
 export function GamePlatform() {
   const [playerPos, setPlayerPos] = useState({
@@ -193,10 +191,8 @@ export function GamePlatform() {
     return () => {
       clearInterval(spawnInterval);
       clearInterval(moveInterval);
-      // eslint-disable-next-line
       window.removeEventListener('keydown', handleKeydown);
     };
-    // eslint-disable-next-line
   }, [gameRunning, playerPos, score, isSoundOn]);
 
   const startGame = () => {
@@ -217,68 +213,78 @@ export function GamePlatform() {
 
   return (
     <div className="game-container">
-      <audio ref={audioRef}>
-        <source src={spaceSound} type="audio/mp3" />
-      </audio>
-      <audio ref={audioFailRef}>
-        <source src={failSound} type="audio/mp3" />
-      </audio>
-      <audio ref={audioStartRef}>
-        <source src={startSound} type="audio/mp3" />
-      </audio>
-      <button onClick={toggleSound}>
-        {isSoundOn ? 'Turn Off Sound' : 'Turn On Sound'}
-      </button>
-      <br></br>
-      {gameOver && (
-        <div className="game-over">
-          <h1>Game Over</h1>
-          <p>Your Score: {score}</p>
-          <button onClick={startGame}>Restart</button>
+      {isMobile && (
+        <div className="mobile-warning">
+          <h1>Game Unavailable on Mobile</h1>
+          <p>This game is not available on mobile devices.</p>
         </div>
       )}
-      <div
-        className="game-platform"
-        onKeyDown={!isMobile ? handleKeydown : null}
-        tabIndex={isMobile ? undefined : 0}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div
-          className="game-platform__player"
-          style={{ left: playerPos.x, bottom: playerPos.y }}
-        ></div>
-        {asteroids.map((ast) => (
-          <div
-            key={ast.id}
-            className="game-platform__obstacle"
-            style={{ left: ast.x, bottom: ast.y }}
-          ></div>
-        ))}
-        {!gameRunning && !gameOver && (
-          <button
-            onClick={startGame}
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            {score === 0 ? 'Start' : 'Restart'}
+      {!isMobile && (
+        <>
+          <audio ref={audioRef}>
+            <source src={spaceSound} type="audio/mp3" />
+          </audio>
+          <audio ref={audioFailRef}>
+            <source src={failSound} type="audio/mp3" />
+          </audio>
+          <audio ref={audioStartRef}>
+            <source src={startSound} type="audio/mp3" />
+          </audio>
+          <button onClick={toggleSound}>
+            {isSoundOn ? 'Turn Off Sound' : 'Turn On Sound'}
           </button>
-        )}
-      </div>
-      <div className="game-info">
-        <p>Score: {score}</p>
-        <p>High Score: {highScore}</p>
-      </div>
-      <div className="game-story">
-        <p>
-          You are a pilot of a space ship in an uncharted part of the cosmos.
-          Your mission is to avoid asteroids.
-        </p>
-      </div>
+          <br />
+          {gameOver && (
+            <div className="game-over">
+              <h1>Game Over</h1>
+              <p>Your Score: {score}</p>
+              <button onClick={startGame}>Restart</button>
+            </div>
+          )}
+          <div
+            className="game-platform"
+            onKeyDown={!isMobile ? handleKeydown : null}
+            tabIndex={isMobile ? undefined : 0}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div
+              className="game-platform__player"
+              style={{ left: playerPos.x, bottom: playerPos.y }}
+            ></div>
+            {asteroids.map((ast) => (
+              <div
+                key={ast.id}
+                className="game-platform__obstacle"
+                style={{ left: ast.x, bottom: ast.y }}
+              ></div>
+            ))}
+            {!gameRunning && !gameOver && (
+              <button
+                onClick={startGame}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                }}
+              >
+                {score === 0 ? 'Start' : 'Restart'}
+              </button>
+            )}
+          </div>
+          <div className="game-info">
+            <p>Score: {score}</p>
+            <p>High Score: {highScore}</p>
+          </div>
+          <div className="game-story">
+            <p>
+              You are a pilot of a space ship in an uncharted part of the
+              cosmos. Your mission is to avoid asteroids.
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

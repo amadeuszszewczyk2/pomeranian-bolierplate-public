@@ -27,12 +27,12 @@ export const blockRouterMetaData = [
   FormsMetaData,
   // Forms2MetaData,
   ReduxMetaData,
+  GamePlatformMetaData,
   InvoiceMetaData,
   BTCMetaData,
   BTC3MetaData,
   MoonPhaseMetaData,
   PlanetsMetaData,
-  GamePlatformMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
