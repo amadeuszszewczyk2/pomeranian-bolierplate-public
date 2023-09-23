@@ -84,6 +84,13 @@ const projectList = [
     tags: ['#js'],
   },
   {
+    path: '/exercises/react/GameSpace',
+    name: 'Spaceship',
+    description:
+      'A simple space-themed game where you pilot a spaceship and avoid asteroids.',
+    tags: ['#js', '#react'],
+  },
+  {
     path: '/exercises/react/BTC',
     name: 'BTC',
     description: 'Bitcoin valuation based on data from Coingecko.',

@@ -5,6 +5,14 @@ import failSound from './fail.mp3';
 import startSound from './start.mp3';
 
 const SHIP_SIZE = 30;
+const playerMoveStep = 10;
+let asteroidSpeed = 4;
+const asteroidSpeedIncrement = 0.2;
+const asteroidSpeedThreshold = 10;
+const asteroidSpawnInterval = 1500;
+const maxAsteroidsToSpawn = 5;
+// eslint-disable-next-line
+const asteroidSpeedIncreaseInterval = 20;
 
 export function GamePlatform() {
   const [playerPos, setPlayerPos] = useState({
@@ -16,13 +24,74 @@ export function GamePlatform() {
   const [highScore, setHighScore] = useState(
     localStorage.getItem('highScore') || 0
   );
-  const [speed, setSpeed] = useState(10);
   const [gameRunning, setGameRunning] = useState(false);
-  const [isSoundOn, setIsSoundOn] = useState(true);
+  const [isSoundOn, setIsSoundOn] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchStartY, setTouchStartY] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+  const [touchEndY, setTouchEndY] = useState(null);
 
   const audioRef = useRef(null);
   const audioFailRef = useRef(null);
   const audioStartRef = useRef(null);
+
+  const spawnAsteroid = () => {
+    setAsteroids((prevAsteroids) => {
+      if (prevAsteroids.length < maxAsteroidsToSpawn) {
+        const newAsteroids = [];
+        const numAsteroidsToSpawn = Math.min(
+          maxAsteroidsToSpawn - prevAsteroids.length,
+          maxAsteroidsToSpawn
+        );
+        for (let i = 0; i < numAsteroidsToSpawn; i++) {
+          newAsteroids.push({
+            id: Date.now() + i,
+            x: Math.random() * (window.innerWidth / 2 - SHIP_SIZE),
+            y: window.innerHeight / 2,
+          });
+        }
+        return [...prevAsteroids, ...newAsteroids];
+      }
+      return prevAsteroids;
+    });
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    setTouchStartX(touch.clientX);
+    setTouchStartY(touch.clientY);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX !== null && touchStartY !== null) {
+      const touch = e.changedTouches[0];
+      setTouchEndX(touch.clientX);
+      setTouchEndY(touch.clientY);
+
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+
+      setPlayerPos((pos) => ({
+        x: Math.max(
+          0,
+          Math.min(window.innerWidth / 2.17 - SHIP_SIZE, pos.x + deltaX)
+        ),
+        y: Math.max(
+          0,
+          Math.min(window.innerHeight / 2.32 - SHIP_SIZE, pos.y + deltaY)
+        ),
+      }));
+    }
+  };
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    if (userAgent.match(/mobile/i) || userAgent.match(/android/i)) {
+      setIsMobile(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (gameRunning && isSoundOn) {
@@ -38,71 +107,60 @@ export function GamePlatform() {
       setHighScore(score);
       localStorage.setItem('highScore', score);
     }
+
+    if (score >= asteroidSpeedThreshold) {
+      asteroidSpeed += asteroidSpeedIncrement;
+    }
   }, [score, highScore]);
 
-  useEffect(() => {
-    const handleKeydown = (e) => {
-      if (!gameRunning) return;
-
-      switch (e.key) {
-        case 'ArrowLeft':
-          setPlayerPos((pos) => ({ x: Math.max(0, pos.x - 20), y: pos.y }));
-          break;
-        case 'ArrowRight':
-          setPlayerPos((pos) => ({
-            x: Math.min(window.innerWidth / 2.17 - SHIP_SIZE, pos.x + 20),
-            y: pos.y,
-          }));
-          break;
-        case 'ArrowUp':
-          setPlayerPos((pos) => ({
-            x: pos.x,
-            y: Math.min(window.innerHeight / 2.32 - SHIP_SIZE, pos.y + 20),
-          }));
-          break;
-        case 'ArrowDown':
-          setPlayerPos((pos) => ({ x: pos.x, y: Math.max(0, pos.y - 20) }));
-          break;
-        default:
-          break;
-      }
-    };
-
-    window.addEventListener('keydown', handleKeydown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeydown);
-    };
-  }, [gameRunning]);
+  const handleKeydown = (e) => {
+    if (!gameRunning) return;
+    switch (e.key) {
+      case 'ArrowLeft':
+        setPlayerPos((pos) => ({
+          x: Math.max(0, pos.x - playerMoveStep),
+          y: pos.y,
+        }));
+        break;
+      case 'ArrowRight':
+        setPlayerPos((pos) => ({
+          x: Math.min(
+            window.innerWidth / 2.17 - SHIP_SIZE,
+            pos.x + playerMoveStep
+          ),
+          y: pos.y,
+        }));
+        break;
+      case 'ArrowUp':
+        setPlayerPos((pos) => ({
+          x: pos.x,
+          y: Math.min(
+            window.innerHeight / 2.32 - SHIP_SIZE,
+            pos.y + playerMoveStep
+          ),
+        }));
+        break;
+      case 'ArrowDown':
+        setPlayerPos((pos) => ({
+          x: pos.x,
+          y: Math.max(0, pos.y - playerMoveStep),
+        }));
+        break;
+      default:
+        break;
+    }
+    spawnAsteroid();
+  };
 
   useEffect(() => {
     if (!gameRunning) return;
-
-    const spawnAsteroid = () => {
-      setAsteroids((prevAsteroids) => {
-        const newAsteroids = [];
-        const numAsteroidsToSpawn = Math.floor(score / 10) + 1;
-
-        for (let i = 0; i < numAsteroidsToSpawn; i++) {
-          newAsteroids.push({
-            id: Date.now() + i,
-            x: Math.random() * (window.innerWidth / 2 - SHIP_SIZE),
-            y: window.innerHeight / 2,
-          });
-        }
-
-        return [...prevAsteroids, ...newAsteroids];
-      });
-    };
-
     const moveAsteroids = () => {
       setAsteroids((prevAsteroids) =>
         prevAsteroids.map((ast) => ({
           ...ast,
-          y: ast.y - speed,
+          y: ast.y - asteroidSpeed,
         }))
       );
-
       setAsteroids((prevAsteroids) =>
         prevAsteroids.filter((ast) => {
           if (ast.y < 0) {
@@ -119,6 +177,7 @@ export function GamePlatform() {
               audioFailRef.current.play();
             }
             setGameRunning(false);
+            setGameOver(true);
             return false;
           }
           return true;
@@ -126,14 +185,19 @@ export function GamePlatform() {
       );
     };
 
-    const spawnInterval = setInterval(spawnAsteroid, 1000);
-    const moveInterval = setInterval(moveAsteroids, 40);
+    const spawnInterval = setInterval(spawnAsteroid, asteroidSpawnInterval);
+    const moveInterval = setInterval(moveAsteroids, 20);
+
+    window.addEventListener('keydown', handleKeydown);
 
     return () => {
       clearInterval(spawnInterval);
       clearInterval(moveInterval);
+      // eslint-disable-next-line
+      window.removeEventListener('keydown', handleKeydown);
     };
-  }, [gameRunning, speed]);
+    // eslint-disable-next-line
+  }, [gameRunning, playerPos, score, isSoundOn]);
 
   const startGame = () => {
     if (isSoundOn) {
@@ -143,6 +207,8 @@ export function GamePlatform() {
     setScore(0);
     setAsteroids([]);
     setPlayerPos({ x: window.innerWidth / 5, y: window.innerHeight / 30 });
+    spawnAsteroid();
+    setGameOver(false);
   };
 
   const toggleSound = () => {
@@ -160,10 +226,24 @@ export function GamePlatform() {
       <audio ref={audioStartRef}>
         <source src={startSound} type="audio/mp3" />
       </audio>
-      {/*<button onClick={toggleSound}>
+      <button onClick={toggleSound}>
         {isSoundOn ? 'Turn Off Sound' : 'Turn On Sound'}
-  </button>*/}
-      <div className="game-platform">
+      </button>
+      <br></br>
+      {gameOver && (
+        <div className="game-over">
+          <h1>Game Over</h1>
+          <p>Your Score: {score}</p>
+          <button onClick={startGame}>Restart</button>
+        </div>
+      )}
+      <div
+        className="game-platform"
+        onKeyDown={!isMobile ? handleKeydown : null}
+        tabIndex={isMobile ? undefined : 0}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="game-platform__player"
           style={{ left: playerPos.x, bottom: playerPos.y }}
@@ -175,7 +255,7 @@ export function GamePlatform() {
             style={{ left: ast.x, bottom: ast.y }}
           ></div>
         ))}
-        {!gameRunning && (
+        {!gameRunning && !gameOver && (
           <button
             onClick={startGame}
             style={{
@@ -195,8 +275,8 @@ export function GamePlatform() {
       </div>
       <div className="game-story">
         <p>
-          Jesteś pilotem kosmicznego statku w niezbadanej części kosmosu. Twoim
-          zadaniem jest unikać asteroid.
+          You are a pilot of a space ship in an uncharted part of the cosmos.
+          Your mission is to avoid asteroids.
         </p>
       </div>
     </div>

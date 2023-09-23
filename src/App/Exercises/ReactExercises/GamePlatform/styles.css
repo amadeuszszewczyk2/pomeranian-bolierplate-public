@@ -16,6 +16,7 @@
   background-image: url('./universe.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: -20px;
 }
 
 /* Style dla gracza i przeszkód */
@@ -45,7 +46,7 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
 }
 
 .game-info {
@@ -54,7 +55,6 @@
   align-items: center;
 }
 
-/* Dodatkowe style dla przycisku startu wewnątrz platformy gry */
 .game-platform button {
   position: absolute;
   top: 50%;
