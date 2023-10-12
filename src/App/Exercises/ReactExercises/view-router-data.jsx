@@ -16,6 +16,8 @@ import { BTC3MetaData } from './BTC3/router-data';
 import { GamePlatformMetaData } from './GamePlatform/router-data';
 import { InvoiceMetaData } from './Invoice/router-data';
 import { CRMMetaData } from './CRM/router-data';
+import { NorrisMetaData } from './Norris/router-data';
+import { CalcMetaData } from './Calc/router-data';
 
 export const blockRouterMetaData = [
   ReactRouterEventsMetaData,
@@ -29,6 +31,8 @@ export const blockRouterMetaData = [
   // Forms2MetaData,
   ReduxMetaData,
   GamePlatformMetaData,
+  NorrisMetaData,
+  CalcMetaData,
   InvoiceMetaData,
   CRMMetaData,
   BTCMetaData,

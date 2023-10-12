@@ -1,0 +1,13 @@
+.custom-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.fixed-width-container {
+  width: 400px; /* Adjust the width as needed */
+  height: 200px; /* Set a fixed height for the container */
+  overflow: auto; /* Enable vertical scroll when content overflows */
+}

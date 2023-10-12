@@ -119,6 +119,18 @@ const projectList = [
     description: 'An educational project about the solar system.',
     tags: ['#react', '#js', '#astronomy'],
   },
+  {
+    path: '/exercises/react/Norris',
+    name: 'Chuck Norris',
+    description: 'Another project that demonstrates the use of the Fetch API.',
+    tags: ['#react', '#fetch'],
+  },
+  {
+    path: '/exercises/react/Calc',
+    name: 'Calculator',
+    description: 'Simple Calculator',
+    tags: ['#js', '#react'],
+  },
 ];
 
 export default projectList;

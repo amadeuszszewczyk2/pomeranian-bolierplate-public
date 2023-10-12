@@ -1,0 +1,75 @@
+.calculator {
+  width: 300px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.calculator_display {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: right;
+  font-size: 36px;
+  height: 60px;
+  width: 270px;
+  grid-column: 1 / -1; /* Span across all columns */
+}
+
+.calculator_buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  justify-items: center; /* Horizontally center buttons */
+  align-items: center; /* Vertically center buttons */
+}
+
+.calculator_button {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex; /* Make button content vertically centered */
+  justify-content: center; /* Horizontally center button content */
+  align-items: center; /* Vertically center button content */
+}
+
+.calculator_button:hover {
+  background: #ddd;
+}
+
+.calculator_button.operator {
+  background: #f0f0f0;
+  color: #ff8800;
+  border: 1px solid #ccc;
+  margin-top: 2px;
+}
+
+.calculator_button.operator:hover {
+  background: #ddd;
+}
+
+/* Positioning the buttons */
+.calculator_button:nth-child(1) {
+  grid-row: 1 / span 2; /* C button */
+}
+
+.calculator_button:nth-child(14) {
+  grid-row: 6; /* Divide button, place below */
+  margin-top: 5px; /* Adjust the margin as needed */
+}
+
+.calculator_button:nth-child(15) {
+  grid-row: 7; /* Multiply button, place below */
+  margin-top: 5px; /* Adjust the margin as needed */
+}
+
+.calculator_button:nth-child(16) {
+  grid-row: 4; /* Subtract button */
+}
+
+.calculator_button:nth-child(13) {
+  grid-row: 5; /* Add button */
+}
