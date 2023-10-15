@@ -137,6 +137,12 @@ const projectList = [
     description: 'Classic word-guessing game',
     tags: ['#js', '#react'],
   },
+  {
+    path: '/exercises/react/Mastermind',
+    name: 'Mastermind',
+    description: 'Classic color-guessing game',
+    tags: ['#js', '#react'],
+  },
 ];
 
 export default projectList;

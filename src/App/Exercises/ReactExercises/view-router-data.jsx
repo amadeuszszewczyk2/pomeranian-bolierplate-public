@@ -15,6 +15,7 @@ import { ReduxMetaData } from './Redux/router-data';
 import { BTC3MetaData } from './BTC3/router-data';
 import { GamePlatformMetaData } from './GamePlatform/router-data';
 import { GallowMetaData } from './Gallow/router-data';
+import { ColorsMetaData } from './Colors/router-data';
 import { InvoiceMetaData } from './Invoice/router-data';
 import { CRMMetaData } from './CRM/router-data';
 import { NorrisMetaData } from './Norris/router-data';
@@ -33,6 +34,7 @@ export const blockRouterMetaData = [
   ReduxMetaData,
   GamePlatformMetaData,
   GallowMetaData,
+  ColorsMetaData,
   NorrisMetaData,
   CalcMetaData,
   InvoiceMetaData,

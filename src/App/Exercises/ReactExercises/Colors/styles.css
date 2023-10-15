@@ -1,0 +1,36 @@
+.colors_board {
+  width: 400px; /* Updated width */
+  height: 200px; /* Updated height */
+  margin: 20px auto;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid orange;
+}
+
+#game_canvas {
+  width: 500px; /* Updated width */
+  height: 300px; /* Updated height */
+  background-color: rgb(255, 255, 255);
+  border: 2px solid orange;
+}
+
+.controls {
+  margin: 0 auto;
+  width: 650px;
+  text-align: center;
+  clear: both;
+}
+
+.controls button {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  margin: 5px 5px;
+  font-size: 14px;
+  float: left;
+}
+
+.controls #delete {
+  background-color: #ffffff;
+  color: #666;
+  border: 1px solid #666;
+}
