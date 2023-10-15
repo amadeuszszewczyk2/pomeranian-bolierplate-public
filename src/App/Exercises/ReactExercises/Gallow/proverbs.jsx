@@ -3,9 +3,8 @@
 export const pilkarzeHaslo = [
   'Lionel Messi'.toUpperCase(),
   'Cristiano Ronaldo'.toUpperCase(),
-  'Neymar Junior'.toUpperCase(),
   'Mohamed Salah'.toUpperCase(),
-  'Kylian Mbappé'.toUpperCase(),
+  'Kylian Mbappe'.toUpperCase(),
   'Robert Lewandowski'.toUpperCase(),
   'Sergio Ramos'.toUpperCase(),
   'Luka Modric'.toUpperCase(),
@@ -19,7 +18,6 @@ export const druzynyHaslo = [
   'Liverpool FC'.toUpperCase(),
   'Manchester United'.toUpperCase(),
   'Bayern Munich'.toUpperCase(),
-  'Paris Saint-Germain'.toUpperCase(),
   'Juventus FC'.toUpperCase(),
   'Manchester City'.toUpperCase(),
   'AC Milan'.toUpperCase(),
