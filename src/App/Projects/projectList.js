@@ -131,6 +131,12 @@ const projectList = [
     description: 'Simple Calculator',
     tags: ['#js', '#react'],
   },
+  {
+    path: '/exercises/react/Hangman',
+    name: 'Hangman',
+    description: 'Classic word-guessing game',
+    tags: ['#js', '#react'],
+  },
 ];
 
 export default projectList;

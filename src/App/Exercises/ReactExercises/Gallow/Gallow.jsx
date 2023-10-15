@@ -22,31 +22,37 @@ export function Gallow() {
   };
 
   return (
-    <div>
+    <>
       <div>
-        {' '}
-        Wybierz kategorię:
-        <label>
-          <input
-            type="radio"
-            value="piłkarze"
-            checked={selectedCategory === 'piłkarze'}
-            onChange={() => handleCategoryChange('piłkarze')}
-          />
-          piłkarze
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="drużyny"
-            checked={selectedCategory === 'drużyny'}
-            onChange={() => handleCategoryChange('drużyny')}
-          />
-          drużyny
-        </label>
+        <div>
+          {' '}
+          Wybierz kategorię:
+          <label>
+            <input
+              type="radio"
+              value="piłkarze"
+              checked={selectedCategory === 'piłkarze'}
+              onChange={() => handleCategoryChange('piłkarze')}
+            />
+            piłkarze
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="drużyny"
+              checked={selectedCategory === 'drużyny'}
+              onChange={() => handleCategoryChange('drużyny')}
+            />
+            drużyny
+          </label>
+        </div>
+        <Hangman selectedProverbIndex={proverbIndex} key={proverbIndex} />
       </div>
-      <Hangman selectedProverbIndex={proverbIndex} key={proverbIndex} />
-      <button onClick={() => restartGame(selectedCategory)}>Restart</button>
-    </div>
+      <div>
+        <button onClick={() => restartGame(selectedCategory)}>Restart</button>
+      </div>
+    </>
   );
 }
+
+export default Gallow;
