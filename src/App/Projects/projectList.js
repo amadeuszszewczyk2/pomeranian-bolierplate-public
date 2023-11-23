@@ -143,6 +143,12 @@ const projectList = [
     description: 'Classic color-guessing game',
     tags: ['#js', '#react'],
   },
+  {
+    path: '/exercises/js/Spotify',
+    name: 'Spotify',
+    description: 'Simple music player',
+    tags: ['#js', '#react', '#audio'],
+  },
 ];
 
 export default projectList;

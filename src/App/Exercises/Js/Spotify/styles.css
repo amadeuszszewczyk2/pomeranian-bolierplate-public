@@ -1,0 +1,59 @@
+/* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #282828;
+  color: #fff;
+  margin: 0;
+}
+
+.spotify-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.spotify-container__songs,
+.spotify-container__selected-song {
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 20px;
+  width: 45%;
+}
+
+.spotify-container__selected-song {
+  text-align: center;
+}
+
+.spotify-container__title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #1db954;
+}
+
+.spotify-container__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spotify-container__item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.spotify-container__item:hover {
+  background-color: #4b4b4b;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Adjust other styles as needed */

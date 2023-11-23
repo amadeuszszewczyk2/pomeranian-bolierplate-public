@@ -1,0 +1,20 @@
+[
+  {
+    "id": "track_1",
+    "audio": "song1.mp3",
+    "title": "Song 1",
+    "author": "Artist 1"
+  },
+  {
+    "id": "track_2",
+    "audio": "song2.mp3",
+    "title": "Song 2",
+    "author": "Artist 2"
+  },
+  {
+    "id": "track_3",
+    "audio": "song3.mp3",
+    "title": "Song 3",
+    "author": "Artist 3"
+  }
+]

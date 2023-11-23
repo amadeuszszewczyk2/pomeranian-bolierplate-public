@@ -50,6 +50,7 @@ import { MachineLearningMetaData } from './MachineLearning/router-data';
 import { MachineLearning2MetaData } from './MachineLearning2/router-data';
 import { Blockchain2MetaData } from './Blockchain2/router-data';
 import { Blockchain3MetaData } from './Blockchain3/router-data';
+import { SpotifyMetaData } from './Spotify/router-data';
 
 export const blockRouterMetaData = [
   blockRouterMetaDataJsFunction1,
@@ -102,6 +103,7 @@ export const blockRouterMetaData = [
   MemoGameMetaData,
   NoughtsAndCrossesMetaData,
   FootballMetaData,
+  SpotifyMetaData,
 ];
 
 export const blockRouterData = getParsedRouterDataList(blockRouterMetaData);
