@@ -8,27 +8,29 @@ export function BTC2() {
   const [convertedPrice, setConvertedPrice] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,pln')
-      .then(response => response.json())
-      .then(data => {
+    fetch(
+      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,pln'
+    )
+      .then((response) => response.json())
+      .then((data) => {
         const priceUSD = data.bitcoin.usd.toFixed(2);
         const pricePLN = data.bitcoin.pln.toFixed(2);
         setBitcoinPrice(priceUSD);
         setUsdToPln(pricePLN);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log('Wystąpił błąd:', error);
       });
   }, []);
 
   useEffect(() => {
     if (bitcoinPrice && usdToPln) {
-      const converted = usdToPln * 0.574962;
+      const converted = usdToPln * 0.812428;
       setConvertedPrice(converted.toFixed(2));
     }
   }, [bitcoinPrice, usdToPln]);
 
-  const subtractValue = 60000;
+  const subtractValue = 100000;
   const subtractedPrice = (convertedPrice - subtractValue).toFixed(2);
   const taxedPrice = (subtractedPrice * 0.81).toFixed(2); // Obniżona wartość o 19% podatek
 
@@ -41,7 +43,9 @@ export function BTC2() {
             <p>Cena w USD: {bitcoinPrice}</p>
             {usdToPln && <p>Cena w PLN: {usdToPln}</p>}
             {convertedPrice && <p>Mój BTC w PLN: {convertedPrice}</p>}
-            {subtractedPrice && <p>Zysk przed opodatkowaniem: {subtractedPrice}</p>}
+            {subtractedPrice && (
+              <p>Zysk przed opodatkowaniem: {subtractedPrice}</p>
+            )}
             {taxedPrice && <p>Zysk po opodatkowaniu: {taxedPrice}</p>}
           </div>
         )}
@@ -51,15 +55,3 @@ export function BTC2() {
 }
 
 export default BTC2;
-
-
-
-
-
-
-
-
-
-
-
-
