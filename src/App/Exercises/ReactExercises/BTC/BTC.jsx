@@ -25,12 +25,12 @@ export function BTC2() {
 
   useEffect(() => {
     if (bitcoinPrice && usdToPln) {
-      const converted = usdToPln * 0.812428;
+      const converted = usdToPln * 0.86978;
       setConvertedPrice(converted.toFixed(2));
     }
   }, [bitcoinPrice, usdToPln]);
 
-  const subtractValue = 100000;
+  const subtractValue = 110000;
   const subtractedPrice = (convertedPrice - subtractValue).toFixed(2);
   const taxedPrice = (subtractedPrice * 0.81).toFixed(2); // Obniżona wartość o 19% podatek
 
